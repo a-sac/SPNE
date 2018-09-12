@@ -100,7 +100,7 @@ exports.defineManualTests = function (contentEl, createActionButton) {
         log.innerHTML = '';
     };
 
-    var device_tests = '<h3>Press Dump Device button to get device information</h3>' +
+    var device_tests = '<h6>Press Dump Device button to get device information</h6>' +
         '<div id="dump_device"></div>' +
         'Expected result: Status box will get updated with device info. (i.e. platform, version, uuid, model, etc)';
 

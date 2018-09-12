@@ -2,8 +2,11 @@ import { Component } from '@angular/core';
 import { NavController, AlertController } from 'ionic-angular';
 import { Storage } from '@ionic/storage';
 import { TabsPage } from './../tabs/tabs';
+import { AuthPage } from './../auth/auth';
 import { HomeService } from '../../app/services/home.service';
 import { Response } from '@angular/http';
+import { MenuController } from 'ionic-angular';
+
 
 @Component({
   selector: 'key',
@@ -17,9 +20,25 @@ export class KeyPage {
   item: any;
   error: any;
 
-  constructor(public navCtrl: NavController, private storage: Storage, private homeService: HomeService, public alertCtrl: AlertController) {
+  constructor(public navCtrl: NavController, private storage: Storage, private homeService: HomeService, public alertCtrl: AlertController, public menuCtrl: MenuController) {
     this.show=false;
   }
+
+  ionViewDidEnter() {
+    this.menuCtrl.swipeEnable(false);
+
+    // If you have more than one side menu, use the id like below
+    // this.menu.swipeEnable(false, 'menu1');
+  }
+
+  ionViewWillLeave() {
+    // Don't forget to return the swipe to normal, otherwise 
+    // the rest of the pages won't be able to swipe to open menu
+    this.menuCtrl.swipeEnable(true);
+
+    // If you have more than one side menu, use the id like below
+    // this.menu.swipeEnable(true, 'menu1');
+   }
 
   ngOnInit(){
       this.storage.get('key').then(pwd=> {
@@ -45,6 +64,7 @@ export class KeyPage {
     if(this.key != undefined){
       this.homeService.getToken(this.key).subscribe(response => {
         this.error=response;
+        console.log(response);
         if(this.error.status == "error"){
           let alert = this.alertCtrl.create({
             title: "ERRO",
@@ -69,6 +89,11 @@ export class KeyPage {
   toggleBC(){
     this.show=true;
     this.showT=false;
+  }
+
+  toggleBA(){
+    this.navCtrl.setRoot(AuthPage, {
+    });
   }
 
   toggleToken(){

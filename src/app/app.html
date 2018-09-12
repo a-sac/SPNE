@@ -1,1 +1,27 @@
-<ion-nav [root]="rootPage"></ion-nav>
+<ion-menu [content]="content">
+    <ion-header no-border style="color: white; background-color: #143363;">
+        <ion-row style="margin: 10px 5px 20px 5px">
+            <ion-col>
+                <img style="width: 30px; border-radius: 50%; background-color: white" src="assets/imgs/avatar.png">
+            </ion-col>
+            <ion-col>
+                Nome: Prórpio Apelido
+            </ion-col>
+        </ion-row>
+    </ion-header>
+
+    <ion-content>
+        <ion-list>      
+        CONTEXTO             
+        </ion-list>
+    </ion-content>
+
+    <ion-footer no-border>    
+        <button class="btnsair" ion-item menuClose (click)="logout()" color="sair-btn" detail-none>
+            <ion-icon name=“close” class="icone-white"></ion-icon>  
+            &nbsp; SAIR
+        </button>    
+    </ion-footer>
+</ion-menu>
+
+<ion-nav [root]="rootPage" #content></ion-nav>

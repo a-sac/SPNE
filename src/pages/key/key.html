@@ -7,24 +7,29 @@
 </ion-header>
   
 <ion-content padding>
-  <form *ngIf="show" (ngSubmit)="toggleKey()">
-      <ion-item>
-        <ion-label>Chave Móvel Digital:</ion-label>
-        <ion-textarea [(ngModel)]="key" name="key"></ion-textarea>
-      </ion-item>
-      <button ion-button type="submit" block style="background-color: #32db64;">Confirmar</button>
-  </form>
-  <div *ngIf="showT">
-    <form (ngSubmit)="toggleToken()">
-        <ion-item>
-          <ion-label>Token:</ion-label>
-          <ion-textarea [(ngModel)]="token" name="token"></ion-textarea>
-        </ion-item>
-        <button ion-button type="submit" block style="background-color: #32db64;">Confirmar</button>
-    </form>
-    <form (ngSubmit)="toggleBC()">
-        <button ion-button type="submit" block style="background-color: #32db64;">Voltar Atrás</button>
-    </form>
+    <div *ngIf="show">
+        <form (ngSubmit)="toggleKey()">
+            <ion-item>
+                <ion-label>Chave Móvel Digital:</ion-label>
+                <ion-textarea [(ngModel)]="key" name="key"></ion-textarea>
+            </ion-item>
+            <button ion-button type="submit" block style="background-color: #143363;">Confirmar</button>
+        </form>
+        <form (ngSubmit)="toggleBA()">
+            <button ion-button type="submit" block style="background-color: #143363;">Voltar Atrás</button>
+        </form>
+    </div>  
+    <div *ngIf="showT">
+        <form (ngSubmit)="toggleToken()">
+            <ion-item>
+            <ion-label>Token:</ion-label>
+            <ion-textarea [(ngModel)]="token" name="token"></ion-textarea>
+            </ion-item>
+            <button ion-button type="submit" block style="background-color: #143363;">Confirmar</button>
+        </form>
+        <form (ngSubmit)="toggleBC()">
+            <button ion-button type="submit" block style="background-color: #143363;">Voltar Atrás</button>
+        </form>
     </div>
 </ion-content>
   
