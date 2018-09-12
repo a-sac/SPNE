@@ -12,7 +12,15 @@
 
     <ion-content>
         <ion-list>      
-        CONTEXTO             
+            <button ion-item (click)="openPage('HomePage')">
+                Home
+            </button>
+            <button ion-item (click)="openPage('SettingsPage')">
+                Settings
+            </button>
+            <button ion-item menuClose>
+                Fechar Menu
+            </button>
         </ion-list>
     </ion-content>
 
@@ -24,4 +32,4 @@
     </ion-footer>
 </ion-menu>
 
-<ion-nav [root]="rootPage" #content></ion-nav>
+<ion-nav [root]="rootPage" #content swipeBackEnabled="false"></ion-nav>
