@@ -23,7 +23,7 @@ import { MyApp } from './app.component';
 import { LockScreenPage } from '../pages/lock-screen/lock-screen';
 import { PincodeInputModule } from 'ionic2-pincode-input';
 import {FingerprintAIO} from "@ionic-native/fingerprint-aio";
-import { MenuController } from 'ionic-angular';
+import { Nav,MenuController } from 'ionic-angular';
 
 import { NgxQRCodeModule } from 'ngx-qrcode2';
 import { BarcodeScanner } from '@ionic-native/barcode-scanner';

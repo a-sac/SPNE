@@ -13,7 +13,7 @@ import { HomePage } from '../pages/home/home';
 import { SettingsPage } from '../pages/settings/settings';
 import { QrCodePage } from '../pages/qrcode/qrcode';
 
-@IonicPage()
+
 @Component({
   templateUrl: 'app.html',
   providers: [HomeService]
@@ -22,6 +22,8 @@ import { QrCodePage } from '../pages/qrcode/qrcode';
 export class MyApp {
   @ViewChild(Nav) nav: Nav;
   rootPage:any= LockScreenPage;
+  tab1Root = HomePage;
+  tab4Root = SettingsPage;
 
   pages: Array<{title: string, component: any}>;
 
@@ -55,6 +57,20 @@ export class MyApp {
     // Reset the content nav to have just this page
     // we wouldn't want the back button to show in this scenario
     this.nav.setRoot(page);
+    this.menuCtrl.close();
+  }
+
+  openHome() {
+    // Reset the content nav to have just this page
+    // we wouldn't want the back button to show in this scenario
+    this.nav.setRoot(HomePage);
+    this.menuCtrl.close();
+  }
+
+  openSettings() {
+    // Reset the content nav to have just this page
+    // we wouldn't want the back button to show in this scenario
+    this.nav.push(SettingsPage);
     this.menuCtrl.close();
   }
 }
