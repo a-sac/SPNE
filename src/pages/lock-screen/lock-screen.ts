@@ -1,4 +1,5 @@
 import { KeyPage } from './../key/key';
+import { SlidesPage } from './../slides/slides';
 import { Component } from '@angular/core';
 import { NavController, NavParams, AlertController } from 'ionic-angular';
 import { PincodeController } from "ionic2-pincode-input/dist";
@@ -6,6 +7,9 @@ import {FingerprintAIO} from "@ionic-native/fingerprint-aio";
 
 import CryptoJS from 'crypto-js';
 import { Storage } from '@ionic/storage';
+import { AuthPage } from '../auth/auth';
+import { MenuController } from 'ionic-angular';
+
 
 @Component({
   selector: 'page-lockscreen',
@@ -18,7 +22,8 @@ export class LockScreenPage {
   //Fazer tentativas depois
 
   constructor(public navCtrl: NavController, public navParams: NavParams, public pincodeCtrl: PincodeController,
-  private storage: Storage, private alertCtrl: AlertController, private faio: FingerprintAIO) {
+  private storage: Storage, private alertCtrl: AlertController, private faio: FingerprintAIO,public menuCtrl: MenuController) {
+
     this.storage.get('faio').then(fid => {
       if (fid !== undefined) {
         console.log("FAIO IS SET")
@@ -31,6 +36,22 @@ export class LockScreenPage {
     })
     .catch((error: any) => console.log(error))
   }
+
+  ionViewDidEnter() {
+    this.menuCtrl.swipeEnable(false);
+
+    // If you have more than one side menu, use the id like below
+    // this.menu.swipeEnable(false, 'menu1');
+  }
+
+  ionViewWillLeave() {
+    // Don't forget to return the swipe to normal, otherwise 
+    // the rest of the pages won't be able to swipe to open menu
+    this.menuCtrl.swipeEnable(true);
+
+    // If you have more than one side menu, use the id like below
+    // this.menu.swipeEnable(true, 'menu1');
+   }
 
   ionViewDidLoad() {
     // Try to get password stored
@@ -118,7 +139,7 @@ export class LockScreenPage {
         console.log("Stored password: " + stored_pincode)
   
         // Go to key page
-        this.navCtrl.setRoot(KeyPage, {
+        this.navCtrl.setRoot(AuthPage, {
             pincode: stored_pincode
         });
         }
@@ -155,7 +176,7 @@ export class LockScreenPage {
     let hash = String(CryptoJS.SHA256(pincode))
     this.storage.set('password_encrypt', hash);
     this.storage.set('first',true);
-    this.navCtrl.setRoot(KeyPage, {
+    this.navCtrl.setRoot(SlidesPage, {
       pincode: hash
     });
   }
@@ -170,7 +191,7 @@ export class LockScreenPage {
 
       // if match go to tabs page
       if (entered_pincode == stored_pincode) {
-        this.navCtrl.setRoot(KeyPage, {
+        this.navCtrl.setRoot(AuthPage, {
           pincode: entered_pincode
         });
       }

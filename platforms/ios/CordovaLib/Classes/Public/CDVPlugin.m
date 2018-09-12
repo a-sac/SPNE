@@ -85,7 +85,7 @@ NSString* const CDVViewWillTransitionToSizeNotification = @"CDVViewWillTransitio
 - (void)pluginInitialize
 {
     // You can listen to more app notifications, see:
-    // http://developer.apple.com/library/ios/#DOCUMENTATION/UIKit/Reference/UIApplication_Class/Reference/Reference.html#//apple_ref/doc/uid/TP40006728-CH3-DontLinkElementID_4
+    // http://developer.apple.com/library/ios/#DOCUMENTATION/UIKit/Reference/UIApplication_Class/Reference/Reference.html#//apple_ref/doc/uid/TP40006728-Ch6-DontLinkElementID_4
 
     // NOTE: if you want to use these, make sure you uncomment the corresponding notification handler
 

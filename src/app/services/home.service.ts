@@ -12,7 +12,7 @@ export class HomeService{
 
     constructor(http:Http){
         this.http = http;
-        this.baseUrl = 'http://dev-ionicus.herokuapp.com/';
+        this.baseUrl = 'http://ionicos.herokuapp.com/';
     }
 
     getPosts(key, token){

@@ -1,0 +1,23 @@
+slides {
+
+    ion-content {
+        background: #ffffff;
+    }
+
+    ion-textarea{
+        border: #000000;
+    }
+
+    ion-title{
+        position: absolute;
+        left: 0;
+        top: 0;
+        height: 100%;
+        width: 100%;
+        text-align: center;
+    }
+
+    .btn-wrapper {
+        text-align: center;
+    }
+}
