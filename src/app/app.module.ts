@@ -6,6 +6,7 @@ import { SlidesPage } from './../pages/slides/slides';
 import { IonicPageModule } from 'ionic-angular';
 import { AuthPage } from './../pages/auth/auth';
 import { Splash } from './../pages/splash/splash';
+import { DetailsPage } from './../pages/details/details';
 import { BrowserModule } from '@angular/platform-browser';
 import { ErrorHandler, NgModule } from '@angular/core';
 import { IonicApp, IonicErrorHandler, IonicModule } from 'ionic-angular';
@@ -33,6 +34,7 @@ import { BarcodeScanner } from '@ionic-native/barcode-scanner';
     HomePage,
     KeyPage,
     Splash,
+    DetailsPage,
     SettingsPage,
     TabsPage,
     SlidesPage,
@@ -56,6 +58,7 @@ import { BarcodeScanner } from '@ionic-native/barcode-scanner';
     LockScreenPage,
     HomePage,
     KeyPage,
+    DetailsPage,
     Splash,
     SettingsPage,
     TabsPage,
