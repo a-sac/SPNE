@@ -1,16 +1,10 @@
 import { Storage } from '@ionic/storage';
 import { Component } from '@angular/core';
+import {NavController, IonicPage} from 'ionic-angular';
 import { Platform, AlertController } from 'ionic-angular';
-import { NavController, NavParams, LoadingController } from 'ionic-angular';
+import {  NavParams, LoadingController } from 'ionic-angular';
 import { HomeService } from '../../app/services/home.service';
 import { DomSanitizer } from '@angular/platform-browser';
-
-/**
- * Generated class for the HomePage page.
- *
- * See https://ionicframework.com/docs/components/#navigation for more info on
- * Ionic pages and navigation.
- */
 
 @Component({
   selector: 'page-home',
@@ -46,10 +40,15 @@ export class HomePage {
   DE: any;
   messages: any;
   date1: any;
+  colors: any;
 
   constructor(public loadingCtrl: LoadingController, public plt: Platform, public navCtrl: NavController,
     public sanitizer: DomSanitizer, public navParams: NavParams, private homeService: HomeService, private alertCtrl: AlertController) {
     this.storage = navParams.get('storage');
+    this.colors={ 
+      alerta : 'orange', 
+      notificacao : 'blue' 
+    };
     this.show1=true;
     this.show2=false;
     this.tfront=true;

@@ -1,9 +1,7 @@
 import { Component } from '@angular/core';
 import { NavParams } from 'ionic-angular';
-import { QrCodePage } from '../qrcode/qrcode';
 import { HomePage } from '../home/home';
 import { SettingsPage } from '../settings/settings';
-import { HistoryPage } from '../history/history';
 import { MenuController } from 'ionic-angular';
 
 @Component({
@@ -12,8 +10,6 @@ import { MenuController } from 'ionic-angular';
 export class TabsPage {
 
   tab1Root = HomePage;
-  tab2Root = QrCodePage;
-  tab3Root = HistoryPage;
   tab4Root = SettingsPage;
   tabParams = {
     storage: this.navParams.get('storage')

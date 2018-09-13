@@ -1,17 +1,9 @@
-<!--
-  Generated template for the HomePage page.
-
-  See http://ionicframework.com/docs/components/#navigation for more info on
-  Ionic pages and navigation.
--->
 <ion-header>
   <ion-navbar color="white" style="color: #143363">
-
-    <ion-buttons start>
-      <button ion-button icon-only menuToggle>
-        <ion-icon name="menu"></ion-icon>
-      </button>
-    </ion-buttons>
+    
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
 
     <ion-title text-center>PNE</ion-title>
 
@@ -21,16 +13,18 @@
   <ion-list>
     <div *ngIf="messages" >
     <div *ngIf="messages.data" >
-    <ion-item *ngFor="let i of messages.data">
+    <ion-item *ngFor="let i of messages.data;" [ngStyle]="{'border-color': colors[i.tipo]}" style="border-left: solid; border-left-width: 10px; margin: 20px 0px">
       <ion-thumbnail *ngIf="i.imagem && i.imagem != null" item-left>
         <img src="{{i.imagem}}">
       </ion-thumbnail>
-      <h3> {{i.entidade}}</h3>
-      <h2>{{i.titulo}}</h2>
-      <h4>{{i.tipo}}</h4>
-      <div>
-        <h2>{{i["linha-1"]}}</h2>
-        <h2>{{i["linha-2"]}}</h2>
+      <h4 style="color:gray"> {{i.entidade}}</h4>
+      <b><h2>{{i.titulo}}</h2></b>
+      <div [ngStyle]="{'border-color': colors[i.tipo]}" style="border:solid; display: inline-block; border-radius: 10px">
+        <h6 [ngStyle]="{'color': colors[i.tipo]}" style="padding: 2px">{{i.tipo}}</h6>
+      </div>
+      <div style="border: solid; border-color:gray; padding: 20px 10px">
+        <h2 style="color:gray">{{i["linha-1"]}}</h2>
+        <h2 style="color:gray">{{i["linha-2"]}}</h2>
       <div *ngIf="date1" >
         <ion-item>
           <ion-datetime displayFormat="MM/DD/YYYY" [(ngModel)]="date1"></ion-datetime>
