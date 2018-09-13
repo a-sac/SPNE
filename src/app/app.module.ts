@@ -6,6 +6,7 @@ import { TabsPage } from './../pages/tabs/tabs';
 import { KeyPage } from './../pages/key/key';
 import { HistoryPage } from './../pages/history/history';
 import { SlidesPage } from './../pages/slides/slides';
+import { IonicPageModule } from 'ionic-angular';
 import { AuthPage } from './../pages/auth/auth';
 import { Splash } from './../pages/splash/splash';
 import { BrowserModule } from '@angular/platform-browser';
@@ -23,7 +24,7 @@ import { MyApp } from './app.component';
 import { LockScreenPage } from '../pages/lock-screen/lock-screen';
 import { PincodeInputModule } from 'ionic2-pincode-input';
 import {FingerprintAIO} from "@ionic-native/fingerprint-aio";
-import { MenuController } from 'ionic-angular';
+import { Nav,MenuController } from 'ionic-angular';
 
 import { NgxQRCodeModule } from 'ngx-qrcode2';
 import { BarcodeScanner } from '@ionic-native/barcode-scanner';
@@ -51,6 +52,7 @@ import { BarcodeScanner } from '@ionic-native/barcode-scanner';
     HttpModule,
     NgxQRCodeModule,
     HttpClientModule,
+    IonicPageModule,
     IonicModule.forRoot(MyApp),
     IonicStorageModule.forRoot()
   ],

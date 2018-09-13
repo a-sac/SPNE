@@ -2,24 +2,23 @@
     <ion-header no-border style="color: white; background-color: #143363;">
         <ion-row style="margin: 10px 5px 20px 5px">
             <ion-col>
-                <img style="width: 30px; border-radius: 50%; background-color: white" src="assets/imgs/avatar.png">
+                <img style="width: 100px; border-radius: 50%; background-color: white" src="assets/imgs/avatar.png">
             </ion-col>
             <ion-col>
-                Nome: Prórpio Apelido
+                <b>Nome: Próprio Apelido</b>
+                <br>
+                CC: 21345678
+                <br>
+                <br>
+                último login em dd/mm/aaaa
             </ion-col>
         </ion-row>
     </ion-header>
 
     <ion-content>
         <ion-list>      
-            <button ion-item (click)="openPage('HomePage')">
-                Home
-            </button>
-            <button ion-item (click)="openPage('SettingsPage')">
-                Settings
-            </button>
-            <button ion-item menuClose>
-                Fechar Menu
+            <button menuClose ion-item *ngFor="let p of pages" (click)="openPage(p)">
+                {{p.title}}
             </button>
         </ion-list>
     </ion-content>

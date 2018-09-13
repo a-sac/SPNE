@@ -1,6 +1,8 @@
 import { LockScreenPage } from './../pages/lock-screen/lock-screen';
 import { Component } from '@angular/core';
 import { ViewChild } from '@angular/core';
+import { Storage } from '@ionic/storage';
+import { IonicPageModule, NavParams } from 'ionic-angular';
 import { Nav, IonicPage, MenuController } from 'ionic-angular';
 import { Platform, ModalController, NavController } from 'ionic-angular';
 import { Splash } from '../pages/splash/splash';
@@ -13,19 +15,20 @@ import { HomePage } from '../pages/home/home';
 import { SettingsPage } from '../pages/settings/settings';
 import { QrCodePage } from '../pages/qrcode/qrcode';
 
-@IonicPage()
 @Component({
   templateUrl: 'app.html',
   providers: [HomeService]
 })
 
 export class MyApp {
+  rootPage: any = LockScreenPage;
   @ViewChild(Nav) nav: Nav;
-  rootPage:any= LockScreenPage;
+
+  rootPageParams: any;
 
   pages: Array<{title: string, component: any}>;
 
-  constructor(platform: Platform, statusBar: StatusBar, splashScreen: SplashScreen, modalCtrl: ModalController, public menuCtrl: MenuController) {
+  constructor(public platform: Platform, private storage: Storage, public statusBar: StatusBar, public splashScreen: SplashScreen, public modalCtrl: ModalController, public menuCtrl: MenuController) {
     platform.ready().then(() => {
       /*
         if (PIN) {
@@ -44,18 +47,40 @@ export class MyApp {
     });
 
     this.pages = [
-      { title: 'Home', component: HomePage },
-      { title: 'QR', component: QrCodePage },
-      { title: 'Settings', component: SettingsPage }
+      { title: 'Caixa de Entrada', component: HomePage },
+      { title: 'Alertas', component: HomePage },
+      { title: 'Definições', component: SettingsPage },
+      { title: 'Entidades Aderentes', component: HomePage },
+      { title: 'Sobre o PNE', component: HomePage },
+      { title: 'Arquivo', component: HomePage }
     ];
+  }
+
+  initializeApp() {
+    this.platform.ready().then(() => {
+      /*
+        if (PIN) {
+          rootPage = HomePage;
+          lockService.init();
+        } else {
+          rootPage = StartPage;
+        }
+        TIRAR O LOCKSERVICE DAQUI DE BAIXO
+        */
+      //lockService.init();
+      this.statusBar.styleDefault();
+      let splash = this.modalCtrl.create(Splash);
+      splash.present();
+      //splashScreen.hide();
+    });
   }
 
 
   openPage(page) {
     // Reset the content nav to have just this page
     // we wouldn't want the back button to show in this scenario
-    this.nav.setRoot(page);
-    this.menuCtrl.close();
+    this.nav.setRoot(page.component, {storage: this.storage});
+    
   }
 }
 
