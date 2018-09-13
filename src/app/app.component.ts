@@ -13,7 +13,6 @@ import { SplashScreen } from '@ionic-native/splash-screen';
 import { TabsPage } from '../pages/tabs/tabs';
 import { HomePage } from '../pages/home/home';
 import { SettingsPage } from '../pages/settings/settings';
-import { QrCodePage } from '../pages/qrcode/qrcode';
 
 @Component({
   templateUrl: 'app.html',
