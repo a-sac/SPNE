@@ -1,0 +1,22 @@
+<ion-header>
+  <ion-navbar color="primary">
+      <ion-title>
+        Mensagem
+      </ion-title>
+    </ion-navbar>
+</ion-header>
+      
+<ion-content padding>
+  <b><h2>{{item.titulo}}</h2></b>
+  <div [ngStyle]="{'border-color': colors[item.tipo]}" style="border:solid; display: inline-block; border-radius: 10px">
+    <h6 [ngStyle]="{'color': colors[item.tipo]}" style="padding: 8px 2px 2px 0px">{{item.tipo}}</h6>
+  </div>
+  <h4 style="color:gray"> {{item.entidade}}</h4>
+  <ion-card-content>
+    {{item.conteudo}}
+  </ion-card-content>
+  <div style="border: solid; border-color:gray; padding: 20px 10px">
+      <h6 style="color:gray">{{item["linha-1"]}}</h6>
+      <h6 style="color:gray">{{item["linha-2"]}}</h6>
+  </div>
+</ion-content>
