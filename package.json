@@ -47,6 +47,7 @@
     "crypto-js": "^3.1.9-1",
     "ionic": "^4.1.2",
     "ionic-angular": "3.9.2",
+    "ionic2-material-icons": "^1.0.3",
     "ionic2-pincode-input": "^0.1.1",
     "ionicons": "3.0.0",
     "ngx-qrcode2": "^0.1.0",
@@ -75,5 +76,8 @@
       "ios",
       "android"
     ]
+  },
+  "config": {
+    "ionic_copy": "./copy.config.js"
   }
 }
