@@ -16,9 +16,18 @@ slides {
         width: 100%;
         text-align: center;
     }
-    img{
-      height: 90%;
-      width: 90%;
+.header-banner{
+
+		height:200px;
+		min-height:200px;
+		background:red;
+	}
+    .slide-zoom {
+      height: 100%;
+    }
+
+    ion-slides {
+       height: 350px;
     }
 
     .btn-wrapper {

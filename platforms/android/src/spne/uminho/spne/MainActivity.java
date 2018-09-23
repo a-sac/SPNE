@@ -17,7 +17,7 @@
        under the License.
  */
 
-package spne.minho.spne;
+package spne.uminho.spne;
 
 import android.os.Bundle;
 import org.apache.cordova.*;
