@@ -1,13 +1,13 @@
 #Mudar do pin
 deixar
-letra branca no icon
+#letra branca no icon
 lock screen a aparecer logo no inicio
 touch id a aparecer
 
 #altura do splash , esta muito grande
 
 
-border do mesmo tamanho dentro
+#border do mesmo tamanho dentro
 botao da msg da mesmo tamanho
 #arquivo mais em cima na navbar
 #retirar entidades aderentes
