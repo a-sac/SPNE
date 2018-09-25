@@ -21,6 +21,8 @@ export class HomePage {
   messages: any;
   date1: any;
   colors: any;
+  user: any;
+  usersel: any;
 
   constructor(public loadingCtrl: LoadingController, public plt: Platform, public navCtrl: NavController,
     public sanitizer: DomSanitizer, public navParams: NavParams, private homeService: HomeService, private alertCtrl: AlertController) {
@@ -34,6 +36,16 @@ export class HomePage {
     });
     this.messages = { "data": [ { "mid": "000000001", "titulo": "Apreciação de Pedido de Isenção de IMI", "entidade": "Autoridade Tributária","conteudo": "Conteudo da mensagem" ,"emissao": "2018-09-02T15:52:17", "modificacao": "2018-09-10T11:12:19", "tipo": "notificacao", "linha-1": "Isenção IMI", "linha-2": "Art. 2687 D", "validade": ["2019-08-02T15:52:17", "2019-09-02T15:52:17"], "imagem": null, "estado": "Aprovado", "valor": null, "spne-estado": "nao-lida", "spne-alerta": null, "spne-local": "entrada" }, { "mid": "000000002", "titulo": "Pagamento IUC Julho/2018", "entidade": "Autoridade Tributária", "conteudo": "Conteudo da mensagem", "emissao": "2018-07-25T10:35:41", "modificacao": "2018-07-26T10:35:41", "tipo": "alerta", "linha-1": "Pagamento Único de Circulação", "linha-2": "74-GE-02", "validade": ["2018-08-30T00:00:00", "2019-08-30T00:00:00"], "imagem": null, "estado": null, "valor": 123.71, "spne-estado": "lida", "spne-alerta": null, "spne-local": "entrada", "anexos": ["https://www.google.com","https://www.youtube.com"] } ] } ;
     this.date1 = new Date(Date.parse(this.messages.data[0].validade[1]));
+    this.usersel="user";
+    this.user={
+      "email": "victor.fonte@gmail.com",
+      "fotografia": null,
+      "nome": "V\u00edtor Francisco Fonte",
+      "telemovel": "+351913456202",
+      "uid": "000000001",
+      "cc": "12356789"
+    };
+    this.usersel=this.user.nome;
   }
 
   ngOnInit() {

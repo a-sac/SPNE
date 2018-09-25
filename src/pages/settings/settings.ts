@@ -46,6 +46,7 @@ export class SettingsPage {
     this.storage.remove('token');
     this.storage.remove('key');
     this.storage.remove('users');
+    this.storage.remove('adesao');
     this.presentAlert("Feito","Todos os seus dados foram removidos. Reinicie a aplicação para terminar.");
   }
 
@@ -57,6 +58,7 @@ export class SettingsPage {
   }
 
   cleanToken(){
+    this.storage.remove('adesao');
     this.storage.remove('token');
     this.storage.remove('key');
     this.presentAlert("Feito","Chave única apagada. Reinicie a aplicação para terminar.");

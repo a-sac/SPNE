@@ -7,6 +7,7 @@ import { IonicPageModule } from 'ionic-angular';
 import { AuthPage } from './../pages/auth/auth';
 import { Splash } from './../pages/splash/splash';
 import { DetailsPage } from './../pages/details/details';
+import { EmailAdr } from './../pages/emailadr/emailadr';
 import { BrowserModule } from '@angular/platform-browser';
 import { ErrorHandler, NgModule } from '@angular/core';
 import { IonicApp, IonicErrorHandler, IonicModule } from 'ionic-angular';
@@ -39,7 +40,8 @@ import { MaterialIconsModule } from 'ionic2-material-icons';
     SettingsPage,
     TabsPage,
     SlidesPage,
-    AuthPage
+    AuthPage,
+    EmailAdr
   ],
   imports: [
     BrowserAnimationsModule,
@@ -65,7 +67,8 @@ import { MaterialIconsModule } from 'ionic2-material-icons';
     SettingsPage,
     TabsPage,
     SlidesPage,
-    AuthPage
+    AuthPage,
+    EmailAdr
   ],
   providers: [
     StatusBar,

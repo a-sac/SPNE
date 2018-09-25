@@ -4,6 +4,7 @@ import { Storage } from '@ionic/storage';
 import { TabsPage } from './../tabs/tabs';
 import { HomePage } from './../home/home';
 import { KeyPage } from './../key/key';
+import { EmailAdr } from './../emailadr/emailadr';
 import { HomeService } from '../../app/services/home.service';
 import { Response } from '@angular/http';
 import { MenuController } from 'ionic-angular';
@@ -40,8 +41,16 @@ export class AuthPage {
       if(pwd){
         this.storage.get('token').then(pwd2 => {
           if(pwd2){
-            this.navCtrl.setRoot(HomePage,{
-              storage: this.storage
+            this.storage.get('adesao').then(pwd3 => {
+              if(pwd3){
+                this.navCtrl.setRoot(HomePage,{
+                  storage: this.storage
+                });
+              } else{
+                this.navCtrl.push(EmailAdr,{
+                  storage: this.storage
+                });
+              }
             });
           }
         });
