@@ -47,11 +47,10 @@ export class MyApp {
 
     this.pages = [
       { title: 'Caixa de Entrada', component: HomePage },
+      { title: 'Arquivo', component: HomePage },
       { title: 'Alertas', component: HomePage },
       { title: 'Definições', component: SettingsPage },
-      { title: 'Entidades Aderentes', component: HomePage },
       { title: 'Sobre o PNE', component: HomePage },
-      { title: 'Arquivo', component: HomePage }
     ];
   }
 
@@ -79,7 +78,7 @@ export class MyApp {
     // Reset the content nav to have just this page
     // we wouldn't want the back button to show in this scenario
     this.nav.setRoot(page.component, {storage: this.storage});
-    
+
   }
 }
 

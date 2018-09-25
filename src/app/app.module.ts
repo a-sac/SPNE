@@ -26,6 +26,7 @@ import { Nav,MenuController } from 'ionic-angular';
 
 import { NgxQRCodeModule } from 'ngx-qrcode2';
 import { BarcodeScanner } from '@ionic-native/barcode-scanner';
+import { MaterialIconsModule } from 'ionic2-material-icons';
 
 @NgModule({
   declarations: [
@@ -50,7 +51,8 @@ import { BarcodeScanner } from '@ionic-native/barcode-scanner';
     HttpClientModule,
     IonicPageModule,
     IonicModule.forRoot(MyApp),
-    IonicStorageModule.forRoot()
+    IonicStorageModule.forRoot(),
+    MaterialIconsModule
   ],
   bootstrap: [IonicApp],
   entryComponents: [

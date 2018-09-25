@@ -1,268 +1,106 @@
 page-home {
 
-    ion-content {
-        background: #ffffff;
-    }
+  ion-content {
+    background: #ffffff;
+  }
 
-    .card {
-        width: 100%;
-        margin: auto;
-        text-align: center;
-    }
+  .card {
+    width: 100%;
+    margin: auto;
+    text-align: center;
+  }
 
-    .container {
-        border-radius: 15px;
-        -webkit-box-shadow: 4px 7px 39px 14px rgba(0,0,0,0.42);
-        -moz-box-shadow: 4px 7px 39px 14px rgba(0,0,0,0.42);
-        box-shadow: 4px 7px 39px 14px rgba(0,0,0,0.42);
-        background-color: #F2F2F2;
-        margin: auto;
-        text-align: center;
-    }
+  .container {
+    border-radius: 15px;
+    -webkit-box-shadow: 4px 7px 39px 14px rgba(0,0,0,0.42);
+    -moz-box-shadow: 4px 7px 39px 14px rgba(0,0,0,0.42);
+    box-shadow: 4px 7px 39px 14px rgba(0,0,0,0.42);
+    background-color: #F2F2F2;
+    margin: auto;
+    text-align: center;
+  }
 
-    .imagem {
-        max-width: 350px;
-        display: block;
-        margin-left: auto;
-        margin-right: auto;
-        width: 50%;
-    }
+  .imagem {
+    max-width: 350px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+  }
 
-    .imagem2 {
-        max-width: 350px;
-        display: block;
-        width: 50%;
-    }
+  .imagem2 {
+    max-width: 350px;
+    display: block;
+    width: 50%;
+  }
 
-    .imagem3 {
-        max-width: 350px;
-        margin: auto;
-        width: 50%;
-        height: 130px;
-        margin-left: 30%;
-        margin-top: 15%;
-    }
+  .imagem3 {
+    max-width: 350px;
+    margin: auto;
+    width: 50%;
+    height: 130px;
+    margin-left: 30%;
+    margin-top: 15%;
+  }
 
-    @media only screen and (max-width: 2500px) {
 
-        .back td {
-            font-size:35px !important;
-            padding: 1px;
-        }
 
-        .back th {
-            font-size: 35px !important;
-        }
+  .row2 {
+    border-radius: 15px;
+    background-color: #f4dbde;
+  }
 
-        .column2 p {
-            font-size:35px;
-            margin: 0px;
-            padding: 15px;
-        }
+  .column {
+    margin: auto;
+    font-size: 80%;
+    float: left;
+    width: 30%;
+  }
 
-        .column2{
-            padding: 100px 0 20px 0 !important;
-        }
-    }
+  .column2 {
+    padding: 80px 0 25px 0;
+    margin: auto;
+    font-size: 80%;
+    float: left;
+    width: 70%;
+  }
+  .row:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
 
-    @media only screen and (max-width: 1500px) {
+  .back{
+    margin: auto;
+    padding: 10px;
+  }
 
-        .back td {
-            font-size:25px !important;
-            padding: 1px;
-        }
+  table{
+    border: none;
+    margin: auto 10px auto auto;
+    width: 80%;
+  }
 
-        .back th {
-            font-size: 25px !important;
-        }
+  th{
+    border: none;
+    margin: auto;
+  }
 
-        .column2 p {
-            font-size:25px;
-            margin: 0px;
-            padding: 8px;
-        }
+  td {
+    border: 1px solid black;
+    border-collapse: collapse;
+    border-style: solid;
+    margin: auto;
+    padding: 5px;
+  }
 
-        .column2{
-            padding: 90px 0 10px 0 !important;
-        }
-    }
+  .arrow-left {
+    width: 0;
+    height: 0;
+    border-top: 100px solid transparent;
+    border-bottom: 100px solid transparent;
 
-    @media only screen and (max-width: 1000px) {
-        .imagem3 {
-            max-width: 350px;
-            margin: auto;
-            width: 50%;
-            height: 120px;
-            margin-left: 30%;
-            margin-top: 20%;
-        }
+    border-left:10px solid blue;
+  }
 
-        .back td {
-            font-size:20px !important;
-            padding: 1px;
-        }
-
-        .back th {
-            font-size: 20px !important;
-        }
-
-        .column2 p {
-            font-size:20px;
-            margin: 0px;
-            padding: 7px;
-        }
-
-        .column2{
-            padding: 70px 0 10px 0 !important;
-        }
-    }
-
-    @media only screen and (max-width: 800px) {
-        .imagem3 {
-            max-width: 350px;
-            margin: auto;
-            width: 50%;
-            height: 100px;
-            margin-left: 30%;
-            margin-top: 20%;
-        }
-
-        .back td {
-            font-size:15px !important;
-            padding: 1px;
-        }
-
-        .back th {
-            font-size: 15px !important;
-        }
-
-        .column2 p {
-            font-size:15px;
-            margin: 0px;
-            padding: 5px;
-        }
-
-        .column2{
-            padding: 50px 0 10px 0 !important;
-        }
-    }
-
-    @media only screen and (max-width: 500px) {
-        .imagem3 {
-            max-width: 350px;
-            margin: auto;
-            width: 50%;
-            height: 90px;
-            margin-left: 30%;
-            margin-top: 30%;
-        }
-
-        .back td {
-            font-size:12px !important;
-            padding: 1px;
-        }
-
-        .back th {
-            font-size:12px !important;
-        }
-
-        .column2 p {
-            font-size:12px;
-            margin: 0px;
-            padding: 2px;
-        }
-
-        .column2{
-            padding: 35px 0 10px 0 !important;
-        }
-    }
-
-    @media only screen and (max-width: 350px) {
-        .imagem3 {
-            max-width: 350px;
-            margin: auto;
-            width: 50%;
-            height: 60px;
-            margin-left: 30%;
-            margin-top: 40%;
-        }
-
-        .back td {
-            font-size:9px !important;
-            padding: 1px;
-        }
-
-        .back th {
-            font-size:9px !important;
-        }
-
-        .column2 p {
-            font-size:9px;
-            margin: 0px;
-            padding: 1px;
-        }
-
-        .column2{
-            padding: 35px 0 10px 0 !important;
-        }
-
-    }
-
-    .row {
-        width: 100%;
-        margin-top: 20px;
-        height: max-content;
-        background-repeat: no-repeat;
-        background-size: 100% 100%;
-        background-image: url(../assets/imgs/carta.jpg);
-    }
-
-    .row2 {
-        border-radius: 15px;
-        background-color: #f4dbde;  
-    }
-
-    .column {
-        margin: auto;
-        font-size: 80%;
-        float: left;
-        width: 30%;
-    }
-
-    .column2 {
-        padding: 80px 0 25px 0;
-        margin: auto;
-        font-size: 80%;
-        float: left;
-        width: 70%;
-    }
-    .row:after {
-        content: "";
-        display: table;
-        clear: both;
-    }
-
-    .back{
-        margin: auto;
-        padding: 10px;
-    }
-
-    table{
-        border: none;
-        margin: auto 10px auto auto;
-        width: 80%;
-    }
-
-    th{
-        border: none;
-        margin: auto;
-    }
-
-    td {
-        border: 1px solid black;
-        border-collapse: collapse;
-        border-style: solid;
-        margin: auto;
-        padding: 5px;
-    }
 }

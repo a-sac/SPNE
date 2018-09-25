@@ -32,7 +32,7 @@ export class KeyPage {
   }
 
   ionViewWillLeave() {
-    // Don't forget to return the swipe to normal, otherwise 
+    // Don't forget to return the swipe to normal, otherwise
     // the rest of the pages won't be able to swipe to open menu
     this.menuCtrl.swipeEnable(true);
 
@@ -85,7 +85,7 @@ export class KeyPage {
       });
     }
   }
-  
+
   toggleBC(){
     this.show=true;
     this.showT=false;
