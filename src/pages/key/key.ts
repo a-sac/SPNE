@@ -6,6 +6,8 @@ import { AuthPage } from './../auth/auth';
 import { HomeService } from '../../app/services/home.service';
 import { Response } from '@angular/http';
 import { MenuController } from 'ionic-angular';
+import { EmailAdr } from '../emailadr/emailadr';
+import { HomePage } from '../home/home';
 
 
 @Component({
@@ -22,6 +24,7 @@ export class KeyPage {
 
   constructor(public navCtrl: NavController, private storage: Storage, private homeService: HomeService, public alertCtrl: AlertController, public menuCtrl: MenuController) {
     this.show=false;
+
   }
 
   ionViewDidEnter() {
@@ -45,8 +48,18 @@ export class KeyPage {
         if(pwd){
           this.storage.get('token').then(pwd2 => {
             if(pwd2){
-              this.navCtrl.setRoot(TabsPage,{
-                storage: this.storage
+              this.storage.get('adesao').then(pwd3 => {
+                if(pwd3){
+                  console.log(pwd3);
+                  this.navCtrl.setRoot(HomePage,{
+                    storage: this.storage
+                  });
+                } else{
+                  console.log("nao ha adesao");
+                  this.navCtrl.push(EmailAdr,{
+                    storage: this.storage
+                  });
+                }
               });
             }
             else{
@@ -119,11 +132,11 @@ export class KeyPage {
           this.storage.set('key', this.key);
           this.storage.set('history', array);
           this.storage.set('token', this.token);
-          this.navCtrl.setRoot(TabsPage,{
+          this.navCtrl.push(EmailAdr,{
             storage: this.storage
           });
         }
-        });
+      });
     }
   }
 }

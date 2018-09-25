@@ -1,0 +1,113 @@
+<ion-header style="color:#143363">
+    <ion-navbar color="white">
+        <ion-title text-center>
+            Adesão ao SPNE
+        </ion-title>
+    </ion-navbar>
+</ion-header>
+<ion-content *ngIf="user" padding >
+    <div *ngIf="user.nome" style="margin: 10px">
+            Bem Vindo
+            <b>{{user.nome}}</b>
+            <br>
+            CC: {{user.cc}}
+            <br>
+    </div>
+
+    <div *ngIf="show">
+        <div style="margin: 20px">
+            <span style="color: blue">Termos e Condições</span>
+
+            <br>
+                Ferrars all spirits his imagine effects amongst neither. It bachelor cheerful of mistaken. Tore has sons put upon wife use bred seen. Its dissimilar invitation ten has discretion unreserved. Had you him humoured jointure ask expenses learning. Blush on in jokes sense do do. Brother hundred he assured reached on up no. On am nearer missed lovers. To it mother extent temper figure better. 
+
+                In show dull give need so held. One order all scale sense her gay style wrote. Incommode our not one ourselves residence. Shall there whose those stand she end. So unaffected partiality indulgence dispatched to of celebrated remarkably. Unfeeling are had allowance own perceived abilities. 
+        </div>
+
+        <div class="btn-wrapper">
+            <button ion-button (click)="entrar()">LI E ACEITO</button>
+        </div>
+    </div>
+    <div *ngIf="showEA">
+        <div style="margin: 20px">
+            <span style="color: blue">Morada Única Digital (M.U.D.)</span>
+
+            <br>
+            <form *ngIf="user.email" (ngSubmit)="toggleEA()">
+                <ion-item>
+                    <ion-label>MUD:</ion-label>
+                    <ion-input [(ngModel)]="ea" name="ea" value="{{user.email}}"></ion-input>
+                </ion-item>
+                <ion-item>
+                    <ion-label>Confirmação:</ion-label>
+                    <ion-input [(ngModel)]="eac" name="eac" value="{{user.email}}"></ion-input>
+                </ion-item>
+                <button ion-button type="submit" block style="background-color: #143363;">Confirmar</button>
+            </form>
+                
+        </div>
+
+    </div>
+    <div *ngIf="showEAT">
+        <div style="margin: 20px">
+            <span style="color: blue">Confirmação da Morada Única Digital (M.U.D.)</span>
+
+            <br>
+            Foi enviado um email para o endereço de email
+            que indicou.
+            Para concluir a adesão, consulte a sua caixa de
+            correio eletrónica e clique no link Confirmar MUD
+            na mensagem que recebeu.
+
+            <form (ngSubmit)="toggleEAT()">
+                <ion-item>
+                    <ion-label>Token:</ion-label>
+                    <ion-input [(ngModel)]="eat" name="eat"></ion-input>
+                </ion-item>
+                <button ion-button type="submit" block style="background-color: #143363;">Confirmar</button>
+            </form>
+                
+        </div>
+    </div>
+    <div *ngIf="showTEL">
+            <div style="margin: 20px">
+                <span style="color: blue">Telemóvel</span>
+    
+                <br>
+                <form *ngIf="user.telemovel" (ngSubmit)="toggleTEL()">
+                    <ion-item>
+                        <ion-label>Telemóvel:</ion-label>
+                        <ion-textarea [(ngModel)]="tel" name="tel" value="{{user.telemovel}}"></ion-textarea>
+                    </ion-item>
+                    <ion-item>
+                        <ion-label>Confirmação:</ion-label>
+                        <ion-textarea [(ngModel)]="telc" name="telc" value="{{user.telemovel}}"></ion-textarea>
+                    </ion-item>
+                    <button ion-button type="submit" block style="background-color: #143363;">Confirmar</button>
+                </form>
+                    
+            </div>
+    
+        </div>
+    <div *ngIf="showTELT">
+        <div style="margin: 20px">
+            <span style="color: blue">Confirmação do Telemóvel</span>
+
+            <br>
+            Foi enviado uma mensagem para o telemóvel
+            que indicou.
+            Para concluir a adesão, consulte o seu
+            telemóvel e coloque a token.
+
+            <form (ngSubmit)="toggleTELT()">
+                <ion-item>
+                    <ion-label>Token:</ion-label>
+                    <ion-textarea [(ngModel)]="telt" name="telt"></ion-textarea>
+                </ion-item>
+                <button ion-button type="submit" block style="background-color: #143363;">Confirmar</button>
+            </form>
+                
+        </div>
+    </div>
+</ion-content>
+
