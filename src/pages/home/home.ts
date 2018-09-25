@@ -6,7 +6,10 @@ import { Platform, AlertController } from 'ionic-angular';
 import {  NavParams, LoadingController } from 'ionic-angular';
 import { HomeService } from '../../app/services/home.service';
 import { DomSanitizer } from '@angular/platform-browser';
+
+if (this.platform.is('cordova')) {
 import {FingerprintAIO} from "@ionic-native/fingerprint-aio";
+}
 
 
 @Component({
@@ -68,6 +71,7 @@ export class HomePage {
 
 
   faio() {
+  if (this.platform.is('cordova')) {
     this.ffaio.isAvailable().then(result =>{
     if(result === "OK")
     {
@@ -101,7 +105,11 @@ export class HomePage {
 
 
     })
+    }
+    else{
+      this.storage.set('first', false);
 
+    }
   }
 
   viewItem(item){

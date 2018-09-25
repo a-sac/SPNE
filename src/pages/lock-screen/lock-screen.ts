@@ -125,6 +125,7 @@ export class LockScreenPage {
   }
 
   startTouchID() {
+  if (this.platform.is('cordova')) {
     this.faio.isAvailable().then(result =>{
       if(result == "OK"){
         this.faio.show({
@@ -150,7 +151,8 @@ export class LockScreenPage {
         .catch((error: any) => console.log(error))
       }
     });
-  }
+    }
+    }
 
   presentAlert(title: string, message: string, register: boolean) {
     var botoes;
