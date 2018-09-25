@@ -6,6 +6,7 @@ import { Platform, AlertController } from 'ionic-angular';
 import {  NavParams, LoadingController } from 'ionic-angular';
 import { HomeService } from '../../app/services/home.service';
 import { DomSanitizer } from '@angular/platform-browser';
+import {FingerprintAIO} from "@ionic-native/fingerprint-aio";
 
 
 @Component({
@@ -23,7 +24,7 @@ export class HomePage {
   colors: any;
 
   constructor(public loadingCtrl: LoadingController, public plt: Platform, public navCtrl: NavController,
-    public sanitizer: DomSanitizer, public navParams: NavParams, private homeService: HomeService, private alertCtrl: AlertController) {
+    public sanitizer: DomSanitizer, public navParams: NavParams, private homeService: HomeService, private alertCtrl: AlertController, private ffaio: FingerprintAIO) {
     this.storage = navParams.get('storage');
     this.colors={
       alerta : 'orange',
@@ -63,29 +64,44 @@ export class HomePage {
     })
   }
 
+
+
+
   faio() {
-    this.storage.set('first', false);
-    let alert = this.alertCtrl.create({
-      title: 'Touch ID',
-      message: 'Deseja ativar o Touch ID?',
-      buttons:[
-        {
-          text: 'Não',
-          role: 'cancel',
-          handler: () => {
-            console.log('Não clicked');
+    this.ffaio.isAvailable().then(result =>{
+    if(result === "OK")
+    {
+
+      this.storage.set('first', false);
+      let alert = this.alertCtrl.create({
+        title: 'Touch ID',
+        message: 'Deseja ativar o Touch ID?',
+        buttons:[
+          {
+            text: 'Não',
+            role: 'cancel',
+            handler: () => {
+              console.log('Não clicked');
+            }
+          },
+          {
+            text: 'Sim',
+            handler: () => {
+              console.log('Sim clicked');
+              this.storage.set('faio', true);
+            }
           }
-        },
-        {
-          text: 'Sim',
-          handler: () => {
-            console.log('Sim clicked');
-            this.storage.set('faio', true);
-          }
-        }
-      ]
+        ]
+      })
+      alert.present()
+
+
+    }
+
+
+
     })
-    alert.present()
+
   }
 
   viewItem(item){

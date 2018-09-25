@@ -45,7 +45,7 @@ export class LockScreenPage {
   }
 
   ionViewWillLeave() {
-    // Don't forget to return the swipe to normal, otherwise 
+    // Don't forget to return the swipe to normal, otherwise
     // the rest of the pages won't be able to swipe to open menu
     this.menuCtrl.swipeEnable(true);
 
@@ -125,27 +125,31 @@ export class LockScreenPage {
   }
 
   startTouchID() {
-    this.faio.show({
-      clientId: 'FingerPrintLockScreen',
-      clientSecret: 'lasd08aah@981',   //Only necessary for Android
-      disableBackup:true,              //Only for Android(optional)
-      localizedFallbackTitle: 'Insira o Pin',      //Only for iOS
-      localizedReason: 'Autentique-se' //Only for iOS
-    })
-    .then((result: any) => {
-      // If the TouchID is correct
-      this.storage.get('password_encrypt').then(pwd => {
-        let stored_pincode = String(pwd)
-        console.log("Stored password: " + stored_pincode)
-  
-        // Go to key page
-        this.navCtrl.setRoot(AuthPage, {
-            pincode: stored_pincode
-        });
-        }
-      )
-    })
-    .catch((error: any) => console.log(error))
+    this.faio.isAvailable().then(result =>{
+      if(result == "OK"){
+        this.faio.show({
+          clientId: 'FingerPrintLockScreen',
+          clientSecret: 'lasd08aah@981',   //Only necessary for Android
+          disableBackup:true,              //Only for Android(optional)
+          localizedFallbackTitle: 'Insira o Pin',      //Only for iOS
+          localizedReason: 'Autentique-se' //Only for iOS
+        })
+        .then((result: any) => {
+          // If the TouchID is correct
+          this.storage.get('password_encrypt').then(pwd => {
+            let stored_pincode = String(pwd)
+            console.log("Stored password: " + stored_pincode)
+
+            // Go to key page
+            this.navCtrl.setRoot(AuthPage, {
+                pincode: stored_pincode
+            });
+            }
+          )
+        })
+        .catch((error: any) => console.log(error))
+      }
+    });
   }
 
   presentAlert(title: string, message: string, register: boolean) {
@@ -162,7 +166,7 @@ export class LockScreenPage {
     } else {
       botoes = ["OK"]
     }
-    
+
     let alert = this.alertCtrl.create({
       title: title,
       subTitle: message,
@@ -170,7 +174,7 @@ export class LockScreenPage {
     });
     alert.present();
   }
-  
+
   //Encryption
   register(pincode) {
     let hash = String(CryptoJS.SHA256(pincode))
@@ -182,7 +186,7 @@ export class LockScreenPage {
   }
 
   login(pincode) {
-    // store passwords 
+    // store passwords
     let entered_pincode = String(CryptoJS.SHA256(pincode))
     // get password stored on local storage
     this.storage.get('password_encrypt').then(pwd => {
