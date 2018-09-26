@@ -45,6 +45,9 @@
     <feature name="BarcodeScanner">
         <param name="ios-package" value="CDVBarcodeScanner" />
     </feature>
+    <feature name="InAppBrowser">
+        <param name="ios-package" value="CDVInAppBrowser" />
+    </feature>
     <name>SPNE</name>
     <description>An awesome Ionic/Cordova app.</description>
     <author email="minho@di.pt" href="http://ionicframework.com/">Ionic Framework Team</author>

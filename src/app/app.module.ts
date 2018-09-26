@@ -29,6 +29,7 @@ import { Nav,MenuController } from 'ionic-angular';
 import { NgxQRCodeModule } from 'ngx-qrcode2';
 import { BarcodeScanner } from '@ionic-native/barcode-scanner';
 import { MaterialIconsModule } from 'ionic2-material-icons';
+import { InAppBrowser } from '@ionic-native/in-app-browser';
 
 @NgModule({
   declarations: [
@@ -78,6 +79,7 @@ import { MaterialIconsModule } from 'ionic2-material-icons';
     SplashScreen,
     BarcodeScanner,
     FingerprintAIO,
+    InAppBrowser,
     {provide: ErrorHandler, useClass: IonicErrorHandler}
   ]
 })
