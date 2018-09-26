@@ -8,7 +8,8 @@ import { EmailAdr } from './../emailadr/emailadr';
 import { HomeService } from '../../app/services/home.service';
 import { Response } from '@angular/http';
 import { MenuController } from 'ionic-angular';
-
+import { BarcodeScanner, BarcodeScannerOptions } from '@ionic-native/barcode-scanner';
+import {Platform} from 'ionic-angular';
 
 @Component({
   selector: 'auth',
@@ -16,7 +17,7 @@ import { MenuController } from 'ionic-angular';
 })
 export class AuthPage {
 
-  constructor(public navCtrl: NavController, private storage: Storage, private homeService: HomeService, public alertCtrl: AlertController, public menu: MenuController) {
+  constructor(public platform: Platform, public navCtrl: NavController, private storage: Storage, private barcodeScanner: BarcodeScanner, private homeService: HomeService, public alertCtrl: AlertController, public menu: MenuController) {
   
   }
   
@@ -64,6 +65,21 @@ export class AuthPage {
   }
 
   toggleQR(){
-
+      this.platform.ready().then(() => {
+        this.barcodeScanner.scan().then((barcodeData) => {
+          this.storage.set('key', 123);
+          this.storage.set('token', 455204);
+          this.navCtrl.push(EmailAdr,{
+            storage: this.storage
+          });
+        }, (err) => {
+          let alert = this.alertCtrl.create({
+            title: 'Erro',
+            subTitle: err,
+            buttons: ['Ok']
+          });
+          alert.present();
+        })
+      })
   }
 }

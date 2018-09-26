@@ -6,6 +6,7 @@ import { IonicPageModule, NavParams } from 'ionic-angular';
 import { Nav, IonicPage, MenuController } from 'ionic-angular';
 import { Platform, ModalController, NavController } from 'ionic-angular';
 import { Splash } from '../pages/splash/splash';
+import { AnexosPage } from '../pages/anexos/anexos';
 import { HomeService } from './services/home.service';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
@@ -26,6 +27,7 @@ export class MyApp {
   rootPageParams: any;
 
   pages: Array<{title: string, component: any}>;
+  anexos: Array<{title: string, component: any}>;
 
   constructor(public platform: Platform, private storage: Storage, public statusBar: StatusBar, public splashScreen: SplashScreen, public modalCtrl: ModalController, public menuCtrl: MenuController) {
     platform.ready().then(() => {
@@ -51,6 +53,14 @@ export class MyApp {
       { title: 'Alertas', component: HomePage },
       { title: 'Definições', component: SettingsPage },
       { title: 'Sobre o PNE', component: HomePage },
+    ];
+
+    this.anexos = [
+      { title: 'Autoridade Tributária', component: AnexosPage },
+      { title: 'Plataforma de Notificações Eletrónicas', component: AnexosPage },
+      { title: 'Primeiro Ministro', component: AnexosPage },
+      { title: 'Segurança Social', component: AnexosPage },
+      { title: 'Serviços de Estrangeiros e Fronteiras', component: AnexosPage },
     ];
   }
 
@@ -78,6 +88,13 @@ export class MyApp {
     // Reset the content nav to have just this page
     // we wouldn't want the back button to show in this scenario
     this.nav.setRoot(page.component, {storage: this.storage});
+
+  }
+
+  openAnexo(anexo) {
+    // Reset the content nav to have just this page
+    // we wouldn't want the back button to show in this scenario
+    this.nav.setRoot(anexo.component, {storage: this.storage, entidade: anexo.title});
 
   }
 }

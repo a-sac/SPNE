@@ -22,7 +22,7 @@
   </ion-item>
   <ion-card-content> <div [innerHTML]="item.conteudo"> </div> </ion-card-content>
 
-  <div>
+  <div  *ngIf="existeAnexos()">
     <ion-buttons end>
        <button ion-button full (click) ="download()">
          <ion-icon md-name="cloud_download"></ion-icon>
@@ -30,6 +30,9 @@
     </ion-buttons>
   </div>
 
+  <div class="btn-wrapper" *ngIf="item['spne-local']=='entrada'">
+    <button ion-button (click)="arquivar()">ARQUIVAR</button>
+  </div>
 </ion-content>
 
 

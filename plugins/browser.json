@@ -30,6 +30,9 @@
     },
     "cordova-plugin-fingerprint-aio": {
       "PACKAGE_NAME": "io.ionic.starter"
+    },
+    "phonegap-plugin-barcodescanner": {
+      "PACKAGE_NAME": "io.ionic.starter"
     }
   },
   "dependent_plugins": {

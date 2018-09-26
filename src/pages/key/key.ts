@@ -75,27 +75,8 @@ export class KeyPage {
 
   toggleKey(){
     if(this.key != undefined){
-      this.homeService.getToken(this.key).subscribe(response => {
-        this.error=response;
-        console.log(response);
-        if(this.error.status == "error"){
-          let alert = this.alertCtrl.create({
-            title: "ERRO",
-            subTitle: "Chave única errada",
-            buttons: [
-              {
-                text:'Ok',
-                role: 'ok'
-              }
-          ]
-          });
-          alert.present();
-        }
-        else{
-          this.show=false;
-          this.showT=true;
-        }
-      });
+      this.show=false;
+      this.showT=true;
     }
   }
 
@@ -111,31 +92,12 @@ export class KeyPage {
 
   toggleToken(){
     if((this.key != undefined) && (this.token != undefined)){
-      this.homeService.getPosts(this.key, this.token).subscribe(response => {
-        this.item =response;
-        console.log(this.item.status);
-        if(this.item.status == "error"){
-          let alert = this.alertCtrl.create({
-            title: "ERRO",
-            subTitle: "Token errado",
-            buttons: [
-              {
-                text:'Ok',
-                role: 'ok'
-              }
-          ]
-          });
-          alert.present();
-        }
-        else{
-          var array = [];
-          this.storage.set('key', this.key);
-          this.storage.set('history', array);
-          this.storage.set('token', this.token);
-          this.navCtrl.push(EmailAdr,{
-            storage: this.storage
-          });
-        }
+      var array = [];
+      this.storage.set('key', this.key);
+      this.storage.set('history', array);
+      this.storage.set('token', this.token);
+      this.navCtrl.push(EmailAdr,{
+        storage: this.storage
       });
     }
   }

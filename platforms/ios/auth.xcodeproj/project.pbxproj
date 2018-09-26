@@ -43,6 +43,9 @@
 		210F524DC8434785B5778DE4 /* TouchID.m in Sources */ = {isa = PBXBuildFile; fileRef = 195A70BDDFE2430C9ADE4097 /* TouchID.m */; };
 		0D5D8C6E29F7411BB7F9D20A /* LocalAuthentication.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4794B51A5F20456AB0EF033E /* LocalAuthentication.framework */; };
 		469F5AEDBEA047ABAD2FAF3F /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A59CC47688704A6D9644C6B8 /* Security.framework */; };
+		B22878438A4449A2B7DFA9A6 /* CDVBarcodeScanner.mm in Resources */ = {isa = PBXBuildFile; fileRef = 98BAC8B35059430EA810FE09 /* CDVBarcodeScanner.mm */; };
+		D1BAD7242F4D4A05AA4E2817 /* scannerOverlay.xib in Resources */ = {isa = PBXBuildFile; fileRef = A3B9BB41E023462D9A157127 /* scannerOverlay.xib */; };
+		D4C4FD032DF64441B41AB740 /* CDVBarcodeScanner.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 8DE2851816884BE79B9CDE02 /* CDVBarcodeScanner.bundle */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -134,6 +137,9 @@
 		582FC5924ED447EBAA2F9D68 /* TouchID.h */ = {isa = PBXFileReference; name = "TouchID.h"; path = "cordova-plugin-touch-id/TouchID.h"; sourceTree = "<group>"; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; explicitFileType = undefined; includeInIndex = 0; };
 		4794B51A5F20456AB0EF033E /* LocalAuthentication.framework */ = {isa = PBXFileReference; name = "LocalAuthentication.framework"; path = "System/Library/Frameworks/LocalAuthentication.framework"; sourceTree = SDKROOT; fileEncoding = undefined; lastKnownFileType = wrapper.framework; explicitFileType = undefined; includeInIndex = 0; };
 		A59CC47688704A6D9644C6B8 /* Security.framework */ = {isa = PBXFileReference; name = "Security.framework"; path = "System/Library/Frameworks/Security.framework"; sourceTree = SDKROOT; fileEncoding = undefined; lastKnownFileType = wrapper.framework; explicitFileType = undefined; includeInIndex = 0; };
+		98BAC8B35059430EA810FE09 /* CDVBarcodeScanner.mm */ = {isa = PBXFileReference; name = "CDVBarcodeScanner.mm"; path = "phonegap-plugin-barcodescanner/CDVBarcodeScanner.mm"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		A3B9BB41E023462D9A157127 /* scannerOverlay.xib */ = {isa = PBXFileReference; name = "scannerOverlay.xib"; path = "scannerOverlay.xib"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = file.xib; explicitFileType = undefined; includeInIndex = 0; };
+		8DE2851816884BE79B9CDE02 /* CDVBarcodeScanner.bundle */ = {isa = PBXFileReference; name = "CDVBarcodeScanner.bundle"; path = "CDVBarcodeScanner.bundle"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = wrapper.plug-in; explicitFileType = undefined; includeInIndex = 0; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -208,6 +214,8 @@
 				3047A50E1AB8057F00498E2A /* config */,
 				8D1107310486CEB800E47090 /* auth-Info.plist */,
 				6AFF5BF81D6E424B00AB3073 /* CDVLaunchScreen.storyboard */,
+				A3B9BB41E023462D9A157127 /* scannerOverlay.xib */,
+				8DE2851816884BE79B9CDE02 /* CDVBarcodeScanner.bundle */,
 			);
 			name = Resources;
 			path = "auth/Resources";
@@ -292,6 +300,7 @@
 				C6FB79F40AA54836B370141F /* CDVViewController+SplashScreen.h */,
 				195A70BDDFE2430C9ADE4097 /* TouchID.m */,
 				582FC5924ED447EBAA2F9D68 /* TouchID.h */,
+				98BAC8B35059430EA810FE09 /* CDVBarcodeScanner.mm */,
 			);
 			name = Plugins;
 			path = "auth/Plugins";
@@ -373,6 +382,8 @@
 				302D95F214D2391D003F00A1 /* MainViewController.xib in Resources */,
 				0207DA581B56EA530066E2B4 /* Images.xcassets in Resources */,
 				6AFF5BF91D6E424B00AB3073 /* CDVLaunchScreen.storyboard in Resources */,
+				D1BAD7242F4D4A05AA4E2817 /* scannerOverlay.xib in Resources */,
+				D4C4FD032DF64441B41AB740 /* CDVBarcodeScanner.bundle in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -427,6 +438,7 @@
 				B759FF03F59A4302B8F7F896 /* CDVSplashScreen.m in Sources */,
 				048A9324CFAC44BBA6AA39ED /* CDVViewController+SplashScreen.m in Sources */,
 				210F524DC8434785B5778DE4 /* TouchID.m in Sources */,
+				B22878438A4449A2B7DFA9A6 /* CDVBarcodeScanner.mm in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
