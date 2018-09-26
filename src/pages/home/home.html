@@ -29,23 +29,31 @@
                 <img src="{{i.imagem}}">
               </ion-thumbnail>
               <h4 style="color:gray"> {{i.entidade}}</h4>
-              <b><h2>{{i.titulo}}</h2></b>
-              <div [ngStyle]="{'border-color': colors[i.tipo]}" style="border:solid; display: inline-block; border-radius: 10px; margin: 0.2em 0em 2em 0em">
+              <div [ngStyle]="{'border-color': colors[i.tipo]}" style="border:solid; display: inline-block; border-radius: 10px; margin: 0.2em 0em 0.6em 0em;border-width: 0.12em ">
                 <h6 [ngStyle]="{'color': colors[i.tipo]}" style="padding: 2px 8px;  top: 2px; width: 100%; position: relative;">{{i.tipo}}</h6>
               </div>
-              <div style="border: solid ; white-space:normal;  border-color:gray; padding: 20px 10px">
-                <h2 style="color:gray ;   overflow-wrap: break-word; word-wrap: break-word; hyphens: auto;">{{i["linha-1"]}}</h2> 
-                <h2 style="color:gray;   overflow-wrap: break-word; word-wrap: break-word; hyphens: auto;">{{i["linha-2"]}}</h2>
-                <div *ngIf="date1" >
-                  <ion-item>
-                  <span>
-                    <div style="word-wrap:break-word">
-                      <ion-icon md-name="access_time" style="position: relative; top: 4px;"></ion-icon>
-                      <span>Valido até {{date1.toISOString().substring(0, 10)}}</span>
-                    </div>
-                  </span>
-                  </ion-item>
-                </div>
+              <div style="border: solid ; white-space:normal;  border-color:#cbcbcb; padding: 5px 10px; border-width: thin">
+                <h2 style="color:black; font-weight:bold;  overflow-wrap: break-word; word-wrap: break-word; hyphens: auto;">{{i["linha-1"]}}</h2>
+                <h2 style="color:gray;   overflow-wrap: break-word; word-wrap: break-word; hyphens: auto;font-size: 0.80em;">{{i["linha-2"]}}</h2>
+
+
+                <ion-grid style="padding-left: 0px">
+                  <ion-row no-padding>
+                    <ion-col  col-10  style="padding-left: 0px">
+                      <div *ngIf="date1" >
+                          <div style="word-wrap:break-word; color:gray; font-size: 0.70em; ">
+                            <ion-icon md-name="access_time" style=" position: relative; top: 3px;"></ion-icon>
+                            <span style="white-space:normal">Valido até {{date1.toISOString().substring(0, 10)}}</span>
+                          </div>
+                      </div>
+                    </ion-col>
+                    <ion-col col-2 style="display: table; margin: auto;">
+                      <ion-icon float-right md-name="add_alert" style=" position:relative; color:orange"></ion-icon>
+                    </ion-col>
+                  </ion-row>
+                </ion-grid>
+
+
               </div>
             </div>
           </ion-col >

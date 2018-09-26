@@ -1,5 +1,5 @@
 <ion-header>
-  <ion-navbar color="primary">
+  <ion-navbar >
       <ion-title>
         Mensagem
       </ion-title>
@@ -7,16 +7,27 @@
 </ion-header>
 
 <ion-content padding>
-  <b><h2>{{item.titulo}}</h2></b>
-  <div [ngStyle]="{'border-color': colors[item.tipo]}" style="border:solid; display: inline-block; border-radius: 10px">
-    <h6 [ngStyle]="{'color': colors[item.tipo]}" style="padding: 8px 2px 2px 0px">{{item.tipo}}</h6>
+  <b><h2 style="font-size: 1.8rem;">{{item.titulo}}</h2></b>
+  <div [ngStyle]="{'border-color': colors[item.tipo]}" style=" border:solid; display: inline-block; border-radius: 10px; border-width: 0.14em;">
+    <h6 [ngStyle]="{'color': colors[item.tipo]}" style="margin:0px 10px 0px 10px; font-weight: 400">{{item.tipo}}</h6>
   </div>
-  <h4 style="color:gray"> {{item.entidade}}</h4>
-  <ion-card-content>
-    {{item.conteudo}}
-  </ion-card-content>
-  <div style="border: solid; border-color:gray; padding: 20px 10px">
-      <h6 style="color:gray">{{item["linha-1"]}}</h6>
-      <h6 style="color:gray">{{item["linha-2"]}}</h6>
-  </div>
+  <ion-item>
+    <h4 style="color:gray"> {{item.entidade}}</h4>
+    <div *ngIf="date1" >
+        <div style="word-wrap:break-word; color:gray; font-size: 0.70em; ">
+          <ion-icon md-name="access_time" style=" position: relative; top: 3px;"></ion-icon>
+          <span style="white-space:normal">Valido até {{date1.toISOString().substring(0, 10)}}</span>
+        </div>
+    </div>
+  </ion-item>
+  <ion-card-content> <div [innerHTML]="item.conteudo"> </div> </ion-card-content>
+
+    <div *ngIf="anexo" >
+<ion-buttons end>
+      <button ion-button icon-only (click) ="download()"  >
+       <ion-icon name="Tranferencia de anexos"></ion-icon>
+     </button>
+</ion-buttons>
+
+    </div>
 </ion-content>
