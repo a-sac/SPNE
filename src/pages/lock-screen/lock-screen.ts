@@ -5,6 +5,7 @@ import { NavController, NavParams, AlertController } from 'ionic-angular';
 import { PincodeController } from "ionic2-pincode-input/dist";
 import {FingerprintAIO} from "@ionic-native/fingerprint-aio";
 
+import { Platform} from 'ionic-angular';
 import CryptoJS from 'crypto-js';
 import { Storage } from '@ionic/storage';
 import { AuthPage } from '../auth/auth';
@@ -22,7 +23,7 @@ export class LockScreenPage {
   //Fazer tentativas depois
 
   constructor(public navCtrl: NavController, public navParams: NavParams, public pincodeCtrl: PincodeController,
-  private storage: Storage, private alertCtrl: AlertController, private faio: FingerprintAIO,public menuCtrl: MenuController) {
+  private storage: Storage, private alertCtrl: AlertController, private faio: FingerprintAIO,public menuCtrl: MenuController, public plt: Platform) {
 
     this.storage.get('faio').then(fid => {
       if (fid !== undefined) {
@@ -125,6 +126,7 @@ export class LockScreenPage {
   }
 
   startTouchID() {
+  if (this.plt.is('cordova')) {
     this.faio.isAvailable().then(result =>{
       if(result == "OK"){
         this.faio.show({
@@ -150,7 +152,8 @@ export class LockScreenPage {
         .catch((error: any) => console.log(error))
       }
     });
-  }
+    }
+    }
 
   presentAlert(title: string, message: string, register: boolean) {
     var botoes;

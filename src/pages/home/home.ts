@@ -8,7 +8,6 @@ import { HomeService } from '../../app/services/home.service';
 import { DomSanitizer } from '@angular/platform-browser';
 import {FingerprintAIO} from "@ionic-native/fingerprint-aio";
 
-
 @Component({
   selector: 'page-home',
   templateUrl: 'home.html'
@@ -84,6 +83,7 @@ export class HomePage {
 
 
   faio() {
+  if (this.plt.is('cordova')) {
     this.ffaio.isAvailable().then(result =>{
     if(result === "OK")
     {
@@ -117,7 +117,11 @@ export class HomePage {
 
 
     })
+    }
+    else{
+      this.storage.set('first', false);
 
+    }
   }
 
   viewItem(item){
