@@ -94,7 +94,7 @@ export class MyApp {
   openAnexo(anexo) {
     // Reset the content nav to have just this page
     // we wouldn't want the back button to show in this scenario
-    this.nav.push(anexo.component, {storage: this.storage, entidade: anexo.title});
+    this.nav.setRoot(anexo.component, {storage: this.storage, entidade: anexo.title});
 
   }
 }

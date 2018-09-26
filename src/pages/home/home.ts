@@ -2,6 +2,7 @@ import { Storage } from '@ionic/storage';
 import { Component } from '@angular/core';
 import {NavController, IonicPage} from 'ionic-angular';
 import { DetailsPage } from './../details/details';
+import { AnexosPage } from './../anexos/anexos';
 import { Platform, AlertController } from 'ionic-angular';
 import {  NavParams, LoadingController } from 'ionic-angular';
 import { HomeService } from '../../app/services/home.service';
@@ -23,6 +24,7 @@ export class HomePage {
   colors: any;
   user: any;
   usersel: any;
+  arquivos: any;
 
   constructor(public loadingCtrl: LoadingController, public plt: Platform, public navCtrl: NavController,
     public sanitizer: DomSanitizer, public navParams: NavParams, private homeService: HomeService, private alertCtrl: AlertController, private ffaio: FingerprintAIO) {
@@ -35,8 +37,11 @@ export class HomePage {
       content: 'Por favor espere...'
     });
     this.storage.get('mensagens').then((value) => {
-      this.messages=value;
-      this.date1 = new Date(Date.parse(value.data[0].validade[1]))
+      console.log(value)
+      if(value){
+        this.messages=value;
+        this.date1 = new Date(Date.parse(value.data[0].validade[1]))
+      }
     }, (reason) => {
       console.log(reason)
     });
@@ -50,6 +55,13 @@ export class HomePage {
       "cc": "12356789"
     };
     this.usersel=this.user.nome;
+    this.arquivos = [
+      { title: 'Autoridade Tributária', component: AnexosPage },
+      { title: 'Plataforma de Notificações Eletrónicas', component: AnexosPage },
+      { title: 'Primeiro Ministro', component: AnexosPage },
+      { title: 'Segurança Social', component: AnexosPage },
+      { title: 'Serviços de Estrangeiros e Fronteiras', component: AnexosPage },
+    ];
   }
 
   ngOnInit() {
@@ -78,9 +90,6 @@ export class HomePage {
       }
     })
   }
-
-
-
 
   faio() {
   if (this.plt.is('cordova')) {
@@ -126,8 +135,16 @@ export class HomePage {
 
   viewItem(item){
     this.navCtrl.push(DetailsPage, {
-        item:item
+        item:item,
+        storage: this.storage
     });
+  }
+
+  openAnexo(anexo) {
+    // Reset the content nav to have just this page
+    // we wouldn't want the back button to show in this scenario
+    this.navCtrl.setRoot(anexo.component, {storage: this.storage, entidade: anexo.title});
+
   }
 }
 

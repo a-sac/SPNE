@@ -31,17 +31,25 @@ export class AnexosPage {
       alerta : 'orange',
       notificacao : '#143363'
     };
+    this.anexos=[];
     this.loading = this.loadingCtrl.create({
       content: 'Por favor espere...'
     });
-    this.messages = this.storage.get('mensagens');
-    this.date1 = new Date(Date.parse(this.messages.data[0].validade[1]));
-    var i = 0;
-    this.messages.data.forEach(element => {
-      if(element.entidade == navParams.get('entidade') && element['spne-local']=='arquivo'){
-        this.anexos[i]=element;
+    this.storage.get('mensagens').then((value) => {
+      console.log(value)
+      if(value){
+        this.messages=value;
+        this.date1 = new Date(Date.parse(value.data[0].validade[1]))
+        console.log(navParams.get('entidade'))
+        value.data.forEach(element => {
+          console.log(element.entidade + " " + element['spne-local'])
+          if(element.entidade == navParams.get('entidade') && element['spne-local']=='arquivo'){
+            this.anexos.push(element);
+          }
+        });
       }
-      i++;
+    }, (reason) => {
+      console.log(reason)
     });
   }
 

@@ -5,7 +5,7 @@
       <ion-icon name="menu"></ion-icon>
     </button>
 
-    <ion-title text-center>PNE</ion-title>
+    <ion-title text-center>Arquivos</ion-title>
 
   </ion-navbar>
 </ion-header>
@@ -46,7 +46,7 @@
     </ion-item>
     </div>
   </ion-list>
-  <div *ngIf="!anexos">
+  <div *ngIf="anexos.length==0">
     <span style="text-align: center;"><h3><b>Não há mensagens</b></h3></span>
   </div>
 </ion-content>

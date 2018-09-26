@@ -19,4 +19,7 @@
       <h6 style="color:gray">{{item["linha-1"]}}</h6>
       <h6 style="color:gray">{{item["linha-2"]}}</h6>
   </div>
+  <div class="btn-wrapper" *ngIf="item['spne-local']=='entrada'">
+    <button ion-button (click)="arquivar()">ARQUIVAR</button>
+  </div>
 </ion-content>
