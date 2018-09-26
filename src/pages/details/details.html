@@ -22,12 +22,14 @@
   </ion-item>
   <ion-card-content> <div [innerHTML]="item.conteudo"> </div> </ion-card-content>
 
-    <div *ngIf="anexo" >
-<ion-buttons end>
-      <button ion-button icon-only (click) ="download()"  >
-       <ion-icon name="Tranferencia de anexos"></ion-icon>
-     </button>
-</ion-buttons>
+  <div>
+    <ion-buttons end>
+       <button ion-button full (click) ="download()">
+         <ion-icon md-name="cloud_download"></ion-icon>
+       </button>
+    </ion-buttons>
+  </div>
 
-    </div>
 </ion-content>
+
+
