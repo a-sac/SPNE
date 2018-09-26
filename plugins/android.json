@@ -8,33 +8,37 @@
   },
   "installed_plugins": {
     "cordova-plugin-device": {
-      "PACKAGE_NAME": "io.ionic.starter"
+      "PACKAGE_NAME": "spne.uminho.spne"
     },
     "cordova-plugin-fingerprint-aio": {
-      "PACKAGE_NAME": "io.ionic.starter"
+      "PACKAGE_NAME": "spne.uminho.spne"
     },
     "cordova-plugin-ionic-keyboard": {
-      "PACKAGE_NAME": "io.ionic.starter"
+      "PACKAGE_NAME": "spne.uminho.spne"
     },
     "cordova-plugin-ionic-webview": {
-      "PACKAGE_NAME": "io.ionic.starter"
+      "PACKAGE_NAME": "spne.uminho.spne"
     },
     "cordova-plugin-pin-dialog": {
-      "PACKAGE_NAME": "io.ionic.starter"
+      "PACKAGE_NAME": "spne.uminho.spne"
     },
     "cordova-plugin-splashscreen": {
-      "PACKAGE_NAME": "io.ionic.starter"
+      "PACKAGE_NAME": "spne.uminho.spne"
     },
     "cordova-plugin-touch-id": {
-      "PACKAGE_NAME": "io.ionic.starter"
+      "PACKAGE_NAME": "spne.uminho.spne"
     },
     "cordova-plugin-whitelist": {
-      "PACKAGE_NAME": "io.ionic.starter"
+      "PACKAGE_NAME": "spne.uminho.spne"
+    },
+    "phonegap-plugin-barcodescanner": {
+      "ANDROID_SUPPORT_V4_VERSION": "27.+",
+      "PACKAGE_NAME": "spne.uminho.spne"
     }
   },
   "dependent_plugins": {
     "cordova-plugin-add-swift-support": {
-      "PACKAGE_NAME": "io.ionic.starter"
+      "PACKAGE_NAME": "spne.uminho.spne"
     }
   }
 }
