@@ -21,6 +21,12 @@
                 {{p.title}}
             </button>
         </ion-list>
+        <b>Arquivo</b>
+        <ion-list>      
+            <button menuClose ion-item *ngFor="let a of anexos" (click)="openAnexo(a)">
+                {{a.title}}
+            </button>
+        </ion-list>
     </ion-content>
 
     <ion-footer no-border>    

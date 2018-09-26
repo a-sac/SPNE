@@ -10,11 +10,11 @@ import {FingerprintAIO} from "@ionic-native/fingerprint-aio";
 
 
 @Component({
-  selector: 'page-home',
-  templateUrl: 'home.html'
+  selector: 'anexos',
+  templateUrl: 'anexos.html'
 })
 
-export class HomePage {
+export class AnexosPage {
   storage: any;
   key: any;
   token: any;
@@ -22,8 +22,7 @@ export class HomePage {
   messages: any;
   date1: any;
   colors: any;
-  user: any;
-  usersel: any;
+  anexos: any;
 
   constructor(public loadingCtrl: LoadingController, public plt: Platform, public navCtrl: NavController,
     public sanitizer: DomSanitizer, public navParams: NavParams, private homeService: HomeService, private alertCtrl: AlertController, private ffaio: FingerprintAIO) {
@@ -35,22 +34,15 @@ export class HomePage {
     this.loading = this.loadingCtrl.create({
       content: 'Por favor espere...'
     });
-    this.storage.get('mensagens').then((value) => {
-      this.messages=value;
-      this.date1 = new Date(Date.parse(value.data[0].validade[1]))
-    }, (reason) => {
-      console.log(reason)
+    this.messages = this.storage.get('mensagens');
+    this.date1 = new Date(Date.parse(this.messages.data[0].validade[1]));
+    var i = 0;
+    this.messages.data.forEach(element => {
+      if(element.entidade == navParams.get('entidade') && element['spne-local']=='arquivo'){
+        this.anexos[i]=element;
+      }
+      i++;
     });
-    this.usersel="user";
-    this.user={
-      "email": "victor.fonte@gmail.com",
-      "fotografia": null,
-      "nome": "V\u00edtor Francisco Fonte",
-      "telemovel": "+351913456202",
-      "uid": "000000001",
-      "cc": "12356789"
-    };
-    this.usersel=this.user.nome;
   }
 
   ngOnInit() {
