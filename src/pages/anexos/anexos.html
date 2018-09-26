@@ -1,0 +1,52 @@
+<ion-header>
+  <ion-navbar color="white" style="color: #143363">
+
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+
+    <ion-title text-center>Arquivos</ion-title>
+
+  </ion-navbar>
+</ion-header>
+<ion-content padding>
+  <ion-list>
+    <div *ngIf="anexos" >
+    <ion-item *ngFor="let i of anexos;" [ngStyle]="{'border-color': colors[i.tipo]}"  style=" border: solid; border-top-width: 0.1px; border-bottom-width: 0.1px; border-right-width: 0.1px; border-left-width: 10px; margin: 20px 0px">
+      <ion-grid>
+        <ion-row>
+          <ion-col col-12>
+            <div style="col-md-12" (click)="viewItem(i)">
+              <ion-thumbnail *ngIf="i.imagem && i.imagem != null" item-left>
+                <img src="{{i.imagem}}">
+              </ion-thumbnail>
+              <h4 style="color:gray"> {{i.entidade}}</h4>
+              <b><h2>{{i.titulo}}</h2></b>
+              <div [ngStyle]="{'border-color': colors[i.tipo]}" style="border:solid; display: inline-block; border-radius: 10px; margin: 0.2em 0em 2em 0em">
+                <h6 [ngStyle]="{'color': colors[i.tipo]}" style="padding: 2px 8px;  top: 2px; width: 100%; position: relative;">{{i.tipo}}</h6>
+              </div>
+              <div style="border: solid ; white-space:normal;  border-color:gray; padding: 20px 10px">
+                <h2 style="color:gray ;   overflow-wrap: break-word; word-wrap: break-word; hyphens: auto;">{{i["linha-1"]}}</h2> 
+                <h2 style="color:gray;   overflow-wrap: break-word; word-wrap: break-word; hyphens: auto;">{{i["linha-2"]}}</h2>
+                <div *ngIf="date1" >
+                  <ion-item>
+                  <span>
+                    <div style="word-wrap:break-word">
+                      <ion-icon md-name="access_time" style="position: relative; top: 4px;"></ion-icon>
+                      <span>Valido até {{date1.toISOString().substring(0, 10)}}</span>
+                    </div>
+                  </span>
+                  </ion-item>
+                </div>
+              </div>
+            </div>
+          </ion-col >
+        </ion-row>
+      </ion-grid>
+    </ion-item>
+    </div>
+  </ion-list>
+  <div *ngIf="anexos.length==0">
+    <span style="text-align: center;"><h3><b>Não há mensagens</b></h3></span>
+  </div>
+</ion-content>

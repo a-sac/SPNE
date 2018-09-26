@@ -5,6 +5,7 @@ import { KeyPage } from './../pages/key/key';
 import { SlidesPage } from './../pages/slides/slides';
 import { IonicPageModule } from 'ionic-angular';
 import { AuthPage } from './../pages/auth/auth';
+import { AnexosPage } from './../pages/anexos/anexos';
 import { Splash } from './../pages/splash/splash';
 import { DetailsPage } from './../pages/details/details';
 import { EmailAdr } from './../pages/emailadr/emailadr';
@@ -41,7 +42,8 @@ import { MaterialIconsModule } from 'ionic2-material-icons';
     TabsPage,
     SlidesPage,
     AuthPage,
-    EmailAdr
+    EmailAdr,
+    AnexosPage
   ],
   imports: [
     BrowserAnimationsModule,
@@ -68,7 +70,8 @@ import { MaterialIconsModule } from 'ionic2-material-icons';
     TabsPage,
     SlidesPage,
     AuthPage,
-    EmailAdr
+    EmailAdr,
+    AnexosPage
   ],
   providers: [
     StatusBar,

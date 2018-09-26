@@ -19,8 +19,8 @@
   </ion-item>
   <ion-list>
     <div *ngIf="messages" >
-    <div *ngIf="messages.data" >
-    <ion-item *ngFor="let i of messages.data;" [ngStyle]="{'border-color': colors[i.tipo]}"  style=" border: solid; border-top-width: 0.1px; border-bottom-width: 0.1px; border-right-width: 0.1px; border-left-width: 10px; margin: 20px 0px">
+    <div *ngFor="let i of messages.data;" >
+    <ion-item *ngIf="i['spne-local']=='entrada'" [ngStyle]="{'border-color': colors[i.tipo]}"  style=" border: solid; border-top-width: 0.1px; border-bottom-width: 0.1px; border-right-width: 0.1px; border-left-width: 10px; margin: 20px 0px">
       <ion-grid>
         <ion-row>
           <ion-col col-12>
@@ -54,5 +54,19 @@
     </ion-item>
     </div>
     </div>
+  </ion-list>
+  <br>
+  <span><h3><b>Arquivo</b></h3></span>
+  <br>
+  <ion-list>
+    <ion-row>   
+      <ion-col>  
+        <div menuClose ion-item *ngFor="let a of arquivos" (click)="openAnexo(a)">
+            <ion-item  style="border-color: gray; border: solid; border-top-width: 0.1px; border-bottom-width: 0.1px; border-right-width: 0.1px; border-left-width: 10px; margin: 20px 0px">
+              {{a.title}}
+            </ion-item>
+        </div>
+      </ion-col>
+    </ion-row> 
   </ion-list>
 </ion-content>
