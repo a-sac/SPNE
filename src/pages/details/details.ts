@@ -16,6 +16,7 @@ export class DetailsPage {
     mensagens: any;
     anexo: any;
     constructor(private browserTab: BrowserTab, public storage: Storage,public navCtrl: NavController, public params: NavParams, private iab: InAppBrowser, public plt: Platform) {
+
         this.colors={
             alerta : 'orange',
             notificacao : '#143363'
@@ -50,6 +51,7 @@ export class DetailsPage {
       const browser = this.iab.create(this.anexo);
       browser.show();
     }
+
   }
 
     arquivar(){
