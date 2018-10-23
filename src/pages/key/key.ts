@@ -24,7 +24,6 @@ export class KeyPage {
 
   constructor(public navCtrl: NavController, private storage: Storage, private homeService: HomeService, public alertCtrl: AlertController, public menuCtrl: MenuController) {
     this.show=false;
-
   }
 
   ionViewDidEnter() {
@@ -75,6 +74,7 @@ export class KeyPage {
 
   toggleKey(){
     if(this.key != undefined){
+      this.homeService.getTel(this.key)
       this.show=false;
       this.showT=true;
     }
