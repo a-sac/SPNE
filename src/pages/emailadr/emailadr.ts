@@ -36,10 +36,10 @@ export class EmailAdr {
     this.showTEL= false;
     this.showTELT= false;
     this.user={
-      "email": "asergioalvesc@gmail.com",
+      "email": "victor.fonte@gmail.com",
       "fotografia": null,
       "nome": "V\u00edtor Francisco Fonte",
-      "telemovel": "913290141",
+      "telemovel": "913456202",
       "uid": "000000001",
       "cc": "12356789"
     };
