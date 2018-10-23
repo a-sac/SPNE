@@ -2,5 +2,6 @@
     "libz.tbd": 2,
     "WebKit.framework": 1,
     "LocalAuthentication.framework": 1,
-    "Security.framework": 1
+    "Security.framework": 1,
+    "SafariServices.framework": 1
 }

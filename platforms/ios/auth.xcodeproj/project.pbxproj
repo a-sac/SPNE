@@ -47,6 +47,8 @@
 		D1BAD7242F4D4A05AA4E2817 /* scannerOverlay.xib in Resources */ = {isa = PBXBuildFile; fileRef = A3B9BB41E023462D9A157127 /* scannerOverlay.xib */; };
 		D4C4FD032DF64441B41AB740 /* CDVBarcodeScanner.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 8DE2851816884BE79B9CDE02 /* CDVBarcodeScanner.bundle */; };
 		79603E69D3FA4A73801D6D73 /* CDVInAppBrowser.m in Sources */ = {isa = PBXBuildFile; fileRef = 94B36922BCE34F0EA9B68DBD /* CDVInAppBrowser.m */; };
+		3251C387E2D144B5BEB06331 /* CBTBrowserTab.m in Sources */ = {isa = PBXBuildFile; fileRef = 234E6D03EA6E4792BCBD99A0 /* CBTBrowserTab.m */; };
+		7E494CB68264454C85634314 /* SafariServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5163B896485149E59AF235F6 /* SafariServices.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -143,6 +145,9 @@
 		8DE2851816884BE79B9CDE02 /* CDVBarcodeScanner.bundle */ = {isa = PBXFileReference; name = "CDVBarcodeScanner.bundle"; path = "CDVBarcodeScanner.bundle"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = wrapper.plug-in; explicitFileType = undefined; includeInIndex = 0; };
 		94B36922BCE34F0EA9B68DBD /* CDVInAppBrowser.m */ = {isa = PBXFileReference; name = "CDVInAppBrowser.m"; path = "cordova-plugin-inappbrowser/CDVInAppBrowser.m"; sourceTree = "<group>"; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; explicitFileType = undefined; includeInIndex = 0; };
 		A755ECE1B747477FB3A16B25 /* CDVInAppBrowser.h */ = {isa = PBXFileReference; name = "CDVInAppBrowser.h"; path = "cordova-plugin-inappbrowser/CDVInAppBrowser.h"; sourceTree = "<group>"; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; explicitFileType = undefined; includeInIndex = 0; };
+		234E6D03EA6E4792BCBD99A0 /* CBTBrowserTab.m */ = {isa = PBXFileReference; name = "CBTBrowserTab.m"; path = "cordova-plugin-browsertab/CBTBrowserTab.m"; sourceTree = "<group>"; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; explicitFileType = undefined; includeInIndex = 0; };
+		856667DA0ED5491B83BB5606 /* CBTBrowserTab.h */ = {isa = PBXFileReference; name = "CBTBrowserTab.h"; path = "cordova-plugin-browsertab/CBTBrowserTab.h"; sourceTree = "<group>"; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; explicitFileType = undefined; includeInIndex = 0; };
+		5163B896485149E59AF235F6 /* SafariServices.framework */ = {isa = PBXFileReference; name = "SafariServices.framework"; path = "System/Library/Frameworks/SafariServices.framework"; sourceTree = SDKROOT; fileEncoding = undefined; lastKnownFileType = wrapper.framework; explicitFileType = undefined; includeInIndex = 0; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -155,6 +160,7 @@
 				C9465D97134948038A6ED116 /* WebKit.framework in Frameworks */,
 				0D5D8C6E29F7411BB7F9D20A /* LocalAuthentication.framework in Frameworks */,
 				469F5AEDBEA047ABAD2FAF3F /* Security.framework in Frameworks */,
+				7E494CB68264454C85634314 /* SafariServices.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -231,6 +237,7 @@
 				C2EC2D453E5F4DB6BB4C25DF /* WebKit.framework */,
 				4794B51A5F20456AB0EF033E /* LocalAuthentication.framework */,
 				A59CC47688704A6D9644C6B8 /* Security.framework */,
+				5163B896485149E59AF235F6 /* SafariServices.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -306,6 +313,8 @@
 				98BAC8B35059430EA810FE09 /* CDVBarcodeScanner.mm */,
 				94B36922BCE34F0EA9B68DBD /* CDVInAppBrowser.m */,
 				A755ECE1B747477FB3A16B25 /* CDVInAppBrowser.h */,
+				234E6D03EA6E4792BCBD99A0 /* CBTBrowserTab.m */,
+				856667DA0ED5491B83BB5606 /* CBTBrowserTab.h */,
 			);
 			name = Plugins;
 			path = "auth/Plugins";
@@ -445,6 +454,7 @@
 				210F524DC8434785B5778DE4 /* TouchID.m in Sources */,
 				B22878438A4449A2B7DFA9A6 /* CDVBarcodeScanner.mm in Resources */,
 				79603E69D3FA4A73801D6D73 /* CDVInAppBrowser.m in Sources */,
+				3251C387E2D144B5BEB06331 /* CBTBrowserTab.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

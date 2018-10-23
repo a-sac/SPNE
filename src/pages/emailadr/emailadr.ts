@@ -36,10 +36,10 @@ export class EmailAdr {
     this.showTEL= false;
     this.showTELT= false;
     this.user={
-      "email": "victor.fonte@gmail.com",
+      "email": "asergioalvesc@gmail.com",
       "fotografia": null,
       "nome": "V\u00edtor Francisco Fonte",
-      "telemovel": "+351913456202",
+      "telemovel": "913290141",
       "uid": "000000001",
       "cc": "12356789"
     };
@@ -56,6 +56,7 @@ export class EmailAdr {
 
   toggleEA(){
     if(this.ea!=undefined && this.eac!=undefined && this.ea!=null && this.eac!=null && this.ea==this.eac){
+      this.homeService.getEmail(this.ea);
       this.showEA=false;
       this.showEAT=true;
     }
@@ -70,6 +71,7 @@ export class EmailAdr {
 
   toggleTEL(){
     if(this.tel!=undefined && this.telc!=undefined && this.tel!=null && this.telc!=null && this.tel==this.telc){
+      this.homeService.getTel(this.tel);
       this.showTEL=false;
       this.showTELT=true;
     }

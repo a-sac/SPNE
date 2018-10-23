@@ -1,6 +1,14 @@
 cordova.define('cordova/plugin_list', function(require, exports, module) {
 module.exports = [
   {
+    "id": "cordova-plugin-browsertab.BrowserTab",
+    "file": "plugins/cordova-plugin-browsertab/www/browsertab.js",
+    "pluginId": "cordova-plugin-browsertab",
+    "clobbers": [
+      "cordova.plugins.browsertab"
+    ]
+  },
+  {
     "id": "cordova-plugin-device.device",
     "file": "plugins/cordova-plugin-device/www/device.js",
     "pluginId": "cordova-plugin-device",
@@ -14,6 +22,15 @@ module.exports = [
     "pluginId": "cordova-plugin-fingerprint-aio",
     "clobbers": [
       "Fingerprint"
+    ]
+  },
+  {
+    "id": "cordova-plugin-inappbrowser.inappbrowser",
+    "file": "plugins/cordova-plugin-inappbrowser/www/inappbrowser.js",
+    "pluginId": "cordova-plugin-inappbrowser",
+    "clobbers": [
+      "cordova.InAppBrowser.open",
+      "window.open"
     ]
   },
   {
@@ -55,23 +72,16 @@ module.exports = [
     "clobbers": [
       "cordova.plugins.barcodeScanner"
     ]
-  },
-  {
-    "id": "cordova-plugin-inappbrowser.inappbrowser",
-    "file": "plugins/cordova-plugin-inappbrowser/www/inappbrowser.js",
-    "pluginId": "cordova-plugin-inappbrowser",
-    "clobbers": [
-      "cordova.InAppBrowser.open",
-      "window.open"
-    ]
   }
 ];
 module.exports.metadata = 
 // TOP OF METADATA
 {
   "cordova-plugin-add-swift-support": "1.7.1",
+  "cordova-plugin-browsertab": "0.2.0",
   "cordova-plugin-device": "2.0.1",
   "cordova-plugin-fingerprint-aio": "1.3.4",
+  "cordova-plugin-inappbrowser": "3.0.0",
   "cordova-plugin-ionic-keyboard": "2.0.5",
   "cordova-plugin-ionic-webview": "1.1.16",
   "cordova-plugin-pin-dialog": "0.1.3",
@@ -79,7 +89,7 @@ module.exports.metadata =
   "cordova-plugin-touch-id": "3.3.1",
   "cordova-plugin-whitelist": "1.3.3",
   "phonegap-plugin-barcodescanner": "8.0.0",
-  "cordova-plugin-inappbrowser": "3.0.0"
+  "cordova-android-support-gradle-release": "1.4.5"
 };
 // BOTTOM OF METADATA
 });

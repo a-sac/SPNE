@@ -48,6 +48,9 @@
     <feature name="InAppBrowser">
         <param name="ios-package" value="CDVInAppBrowser" />
     </feature>
+    <feature name="BrowserTab">
+        <param name="ios-package" value="CBTBrowserTab" />
+    </feature>
     <name>SPNE</name>
     <description>An awesome Ionic/Cordova app.</description>
     <author email="minho@di.pt" href="http://ionicframework.com/">Ionic Framework Team</author>

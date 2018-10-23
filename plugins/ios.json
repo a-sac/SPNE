@@ -37,11 +37,17 @@
     },
     "cordova-plugin-inappbrowser": {
       "PACKAGE_NAME": "spne.uminho.spne"
+    },
+    "cordova-plugin-browsertab": {
+      "PACKAGE_NAME": "spne.uminho.spne"
     }
   },
   "dependent_plugins": {
     "cordova-plugin-add-swift-support": {
       "PACKAGE_NAME": "io.ionic.starter"
+    },
+    "cordova-plugin-compat": {
+      "PACKAGE_NAME": "spne.uminho.spne"
     }
   }
 }

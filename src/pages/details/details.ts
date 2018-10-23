@@ -3,6 +3,7 @@ import { NavController, NavParams } from 'ionic-angular';
 import { InAppBrowser } from '@ionic-native/in-app-browser';
 import { Platform } from 'ionic-angular';
 import { Storage } from '@ionic/storage';
+import { BrowserTab } from '@ionic-native/browser-tab';
 
 @Component({
   templateUrl: 'details.html'
@@ -14,7 +15,7 @@ export class DetailsPage {
     colors: any;
     mensagens: any;
     anexo: any;
-    constructor(public storage: Storage,public navCtrl: NavController, public params: NavParams, private iab: InAppBrowser, public plt: Platform) {
+    constructor(private browserTab: BrowserTab, public storage: Storage,public navCtrl: NavController, public params: NavParams, private iab: InAppBrowser, public plt: Platform) {
         this.colors={
             alerta : 'orange',
             notificacao : '#143363'
@@ -36,8 +37,19 @@ export class DetailsPage {
 
 
   download(){
-    const browser = this.iab.create(this.anexo);
-    browser.show();
+    if (this.plt.is('cordova')) {
+      this.browserTab.isAvailable()
+      .then(isAvailable => {
+        if (isAvailable) {
+          this.browserTab.openUrl(this.anexo);
+        } else {
+          // open URL with InAppBrowser instead or SafariViewController
+        }
+      });
+    }else{
+      const browser = this.iab.create(this.anexo);
+      browser.show();
+    }
   }
 
     arquivar(){

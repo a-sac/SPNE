@@ -7,10 +7,16 @@
     "files": {}
   },
   "installed_plugins": {
+    "cordova-plugin-browsertab": {
+      "PACKAGE_NAME": "spne.uminho.spne"
+    },
     "cordova-plugin-device": {
       "PACKAGE_NAME": "spne.uminho.spne"
     },
     "cordova-plugin-fingerprint-aio": {
+      "PACKAGE_NAME": "spne.uminho.spne"
+    },
+    "cordova-plugin-inappbrowser": {
       "PACKAGE_NAME": "spne.uminho.spne"
     },
     "cordova-plugin-ionic-keyboard": {
@@ -32,10 +38,11 @@
       "PACKAGE_NAME": "spne.uminho.spne"
     },
     "phonegap-plugin-barcodescanner": {
-      "ANDROID_SUPPORT_V4_VERSION": "27.+",
+      "ANDROID_SUPPORT_V4_VERSION": "26.+",
       "PACKAGE_NAME": "spne.uminho.spne"
     },
-    "cordova-plugin-inappbrowser": {
+    "cordova-android-support-gradle-release": {
+      "ANDROID_SUPPORT_VERSION": "26.+",
       "PACKAGE_NAME": "spne.uminho.spne"
     }
   },

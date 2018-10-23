@@ -72,6 +72,14 @@ module.exports = [
       "cordova.InAppBrowser.open",
       "window.open"
     ]
+  },
+  {
+    "id": "cordova-plugin-browsertab.BrowserTab",
+    "file": "plugins/cordova-plugin-browsertab/www/browsertab.js",
+    "pluginId": "cordova-plugin-browsertab",
+    "clobbers": [
+      "cordova.plugins.browsertab"
+    ]
   }
 ];
 module.exports.metadata = 
@@ -87,7 +95,9 @@ module.exports.metadata =
   "cordova-plugin-touch-id": "3.3.1",
   "cordova-plugin-whitelist": "1.3.3",
   "phonegap-plugin-barcodescanner": "8.0.0",
-  "cordova-plugin-inappbrowser": "3.0.0"
+  "cordova-plugin-inappbrowser": "3.0.0",
+  "cordova-plugin-compat": "1.2.0",
+  "cordova-plugin-browsertab": "0.2.0"
 };
 // BOTTOM OF METADATA
 });

@@ -1,0 +1,36 @@
+{
+  "_from": "git+https://github.com/dpa99c/cordova-android-support-gradle-release.git",
+  "_id": "cordova-android-support-gradle-release@1.4.5",
+  "_inBundle": false,
+  "_integrity": "",
+  "_location": "/cordova-android-support-gradle-release",
+  "_phantomChildren": {},
+  "_requested": {
+    "type": "git",
+    "raw": "https://github.com/dpa99c/cordova-android-support-gradle-release",
+    "rawSpec": "https://github.com/dpa99c/cordova-android-support-gradle-release",
+    "saveSpec": "git+https://github.com/dpa99c/cordova-android-support-gradle-release.git",
+    "fetchSpec": "https://github.com/dpa99c/cordova-android-support-gradle-release.git",
+    "gitCommittish": null
+  },
+  "_requiredBy": [
+    "#USER",
+    "/"
+  ],
+  "_resolved": "git+https://github.com/dpa99c/cordova-android-support-gradle-release.git#e04edccea869545a4cee2a1576bb22ffdd57499f",
+  "_spec": "https://github.com/dpa99c/cordova-android-support-gradle-release",
+  "_where": "/home/sergio/Desktop/asac/SPNE",
+  "author": {
+    "name": "Dave Alden"
+  },
+  "bundleDependencies": false,
+  "dependencies": {
+    "xml2js": "~0.4.19"
+  },
+  "deprecated": false,
+  "description": "Cordova/Phonegap plugin to align various versions of the Android Support libraries specified by other plugins to a specific version",
+  "devDependencies": {},
+  "license": "MIT",
+  "name": "cordova-android-support-gradle-release",
+  "version": "1.4.5"
+}

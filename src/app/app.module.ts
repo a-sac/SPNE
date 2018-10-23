@@ -30,6 +30,7 @@ import { NgxQRCodeModule } from 'ngx-qrcode2';
 import { BarcodeScanner } from '@ionic-native/barcode-scanner';
 import { MaterialIconsModule } from 'ionic2-material-icons';
 import { InAppBrowser } from '@ionic-native/in-app-browser';
+import { BrowserTab } from '@ionic-native/browser-tab';
 
 @NgModule({
   declarations: [
@@ -80,6 +81,7 @@ import { InAppBrowser } from '@ionic-native/in-app-browser';
     BarcodeScanner,
     FingerprintAIO,
     InAppBrowser,
+    BrowserTab,
     {provide: ErrorHandler, useClass: IonicErrorHandler}
   ]
 })

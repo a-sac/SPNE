@@ -25,6 +25,7 @@ export class MyApp {
   @ViewChild(Nav) nav: Nav;
 
   rootPageParams: any;
+  todayS: any;
 
   pages: Array<{title: string, component: any}>;
   anexos: Array<{title: string, component: any}>;
@@ -46,6 +47,21 @@ export class MyApp {
       splash.present();
       //splashScreen.hide();
     });
+
+    this.storage.get('login').then(res => {
+      if (res !== undefined) {
+        this.todayS=res
+      } else {
+        this.todayS="First Usage!"
+      }
+    })
+
+    var today = new Date();
+    var dd = today.getDate();
+    var mm = today.getMonth()+1; //January is 0!
+    var yyyy = today.getFullYear();
+
+    this.storage.set('login', dd + '/' + mm + '/' + yyyy);
 
     this.pages = [
       { title: 'Caixa de Entrada', component: HomePage },
