@@ -37,8 +37,7 @@ export class HomeService{
         console.log("https://spneauth.herokuapp.com/msg/"+tel)
 
         return this.http.get("https://spneauth.herokuapp.com/msg/"+tel, options)
-            .map(res => res)
-            .subscribe(data => { console.log(data); })
+            .map(res => res.json())
     }
 
     getPosts(key, token){

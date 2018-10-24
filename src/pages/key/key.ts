@@ -21,6 +21,7 @@ export class KeyPage {
   showT: boolean;
   item: any;
   error: any;
+  tokenR: any;
 
   constructor(public navCtrl: NavController, private storage: Storage, private homeService: HomeService, public alertCtrl: AlertController, public menuCtrl: MenuController) {
     this.show=false;
@@ -74,7 +75,10 @@ export class KeyPage {
 
   toggleKey(){
     if(this.key != undefined){
-      this.homeService.getTel(this.key)
+      this.tokenR = this.homeService.getTel(this.key).subscribe(response => {
+        this.tokenR = response;
+      });
+      console.log(this.tokenR)
       this.show=false;
       this.showT=true;
     }
@@ -91,7 +95,8 @@ export class KeyPage {
   }
 
   toggleToken(){
-    if((this.key != undefined) && (this.token != undefined)){
+    console.log(this.token + "  " + this.tokenR.token)
+    if((this.key != undefined) && (this.token != undefined) && (this.token==this.tokenR.token)){
       var array = [];
       this.storage.set('key', this.key);
       this.storage.set('history', array);
@@ -99,6 +104,21 @@ export class KeyPage {
       this.navCtrl.push(EmailAdr,{
         storage: this.storage
       });
+    }else{
+      let alert = this.alertCtrl.create({
+        title: 'Token',
+        message: 'Token Errado!',
+        buttons:[
+          {
+            text: 'Ok',
+            role: 'cancel',
+            handler: () => {
+              console.log('Ok clicked');
+            }
+          }
+        ]
+      })
+      alert.present()
     }
   }
 }
