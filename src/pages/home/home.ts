@@ -15,6 +15,7 @@ import {FingerprintAIO} from "@ionic-native/fingerprint-aio";
 })
 
 export class HomePage {
+  [x: string]: any;
   storage: any;
   key: any;
   token: any;
@@ -25,6 +26,11 @@ export class HomePage {
   user: any;
   usersel: any;
   arquivos: any;
+  at: any;
+  pne: any;
+  pm: any;
+  ss: any;
+  sef: any;
 
   constructor(public loadingCtrl: LoadingController, public plt: Platform, public navCtrl: NavController,
     public sanitizer: DomSanitizer, public navParams: NavParams, private homeService: HomeService, private alertCtrl: AlertController, private ffaio: FingerprintAIO) {
@@ -33,6 +39,11 @@ export class HomePage {
       alerta : 'orange',
       notificacao : '#143363'
     };
+    this.at=0;
+    this.pne=0;
+    this.pm=0;
+    this.ss=0;
+    this.sef=0;
     this.loading = this.loadingCtrl.create({
       content: 'Por favor espere...'
     });
@@ -41,6 +52,23 @@ export class HomePage {
       if(value){
         this.messages=value;
         this.date1 = new Date(Date.parse(value.data[0].validade[1]))
+        this.messages.data.forEach(element => {
+          if(element['entidade']=='Autoridade Tributária' && element['spne-local']=='arquivo'){
+            this.at++;
+          }
+          if(element['entidade']=='Plataforma de Notificações Eletrónicas' && element['spne-local']=='arquivo'){
+            this.pne++;
+          }
+          if(element['entidade']=='Primeiro Ministro' && element['spne-local']=='arquivo'){
+            this.pm++;
+          }
+          if(element['entidade']=='Segurança Social' && element['spne-local']=='arquivo'){
+            this.ss++;
+          }
+          if(element['entidade']=='Serviços de Estrangeiros e Fronteiras' && element['spne-local']=='arquivo'){
+            this.sef++;
+          }
+        });
       }
     }, (reason) => {
       console.log(reason)
@@ -58,10 +86,10 @@ export class HomePage {
     this.arquivos = [
       { title: 'Autoridade Tributária', component: AnexosPage },
       { title: 'Plataforma de Notificações Eletrónicas', component: AnexosPage },
-      { title: 'Primeiro Ministro', component: AnexosPage },
+      { title: 'Primeiro Ministro', component: AnexosPage},
       { title: 'Segurança Social', component: AnexosPage },
       { title: 'Serviços de Estrangeiros e Fronteiras', component: AnexosPage },
-    ];
+    ]; 
   }
 
   ngOnInit() {

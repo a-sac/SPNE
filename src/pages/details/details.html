@@ -33,6 +33,10 @@
   <div class="btn-wrapper" *ngIf="item['spne-local']=='entrada'">
     <button ion-button (click)="arquivar()">ARQUIVAR</button>
   </div>
+
+  <div class="btn-wrapper" *ngIf="item['spne-local']!='entrada'">
+    <button ion-button (click)="desarquivar()">TIRAR DOS ARQUIVOS</button>
+  </div>
 </ion-content>
 
 

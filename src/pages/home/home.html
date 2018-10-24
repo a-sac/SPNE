@@ -72,6 +72,13 @@
         <div menuClose ion-item *ngFor="let a of arquivos" (click)="openAnexo(a)">
             <ion-item  style="border-color: gray; border: solid; border-top-width: 0.1px; border-bottom-width: 0.1px; border-right-width: 0.1px; border-left-width: 10px; margin: 20px 0px">
               {{a.title}}
+              <div>
+                <span *ngIf="a.title=='Autoridade Tributária'" style="font-weight:bold"> {{at}} mensagens</span>
+                <span *ngIf="a.title=='Plataforma de Notificações Eletrónicas'" style="font-weight:bold"> {{pne}} mensagens</span>
+                <span *ngIf="a.title=='Primeiro Ministro'" style="font-weight:bold"> {{pm}} mensagens</span>
+                <span *ngIf="a.title=='Segurança Social'" style="font-weight:bold"> {{ss}} mensagens</span>
+                <span *ngIf="a.title=='Serviços de Estrangeiros e Fronteiras'" style="font-weight:bold"> {{sef}} mensagens</span>
+              </div>
             </ion-item>
         </div>
       </ion-col>

@@ -52,18 +52,30 @@ export class DetailsPage {
     }
   }
 
-    arquivar(){
-        var id = this.item.mid;
-        if(this.mensagens.data){
-            console.log("arquivei")
-            this.mensagens.data.forEach(element => {
-                if(element.mid==id){
-                    element['spne-local']='arquivo';
-                }
-            });
-            this.storage.set('mensagens',this.mensagens);
+  arquivar(){
+    var id = this.item.mid;
+    if(this.mensagens.data){
+      console.log("arquivei")
+      this.mensagens.data.forEach(element => {
+        if(element.mid==id){
+          element['spne-local']='arquivo';
         }
+      });
+      this.storage.set('mensagens',this.mensagens);
     }
+  }
+
+  desarquivar(){
+    var id = this.item.mid;
+    if(this.mensagens.data){
+        this.mensagens.data.forEach(element => {
+            if(element.mid==id){
+                element['spne-local']='entrada';
+            }
+        });
+        this.storage.set('mensagens',this.mensagens);
+    }
+  }
 
 
   existeAnexos(){
